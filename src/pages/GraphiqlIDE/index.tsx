@@ -1,12 +1,12 @@
-import * as React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../../components/header/Header';
 
-export interface IAppProps {}
+// export interface IAppProps {}
 
 export default function GraphiqlIDE() {
   return (
     <>
-      <h1>GraphiQl IDE</h1>
+      <Header />
       <Link to="/">Home</Link>
     </>
   );
