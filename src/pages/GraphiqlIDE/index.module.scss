@@ -1,0 +1,37 @@
+.wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.codeWrapper {
+    margin: 0 50px;
+    padding: 10px;
+    background-color: beige;
+    flex: 1;
+}
+
+.graphiqlWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.graphqlResponse {
+    overflow: auto;
+    width: 500px;
+    background-color: cadetblue;
+}
+
+.editorTool {
+    display: flex;
+    flex-direction: column;
+}
+
+.queryEditor {
+    margin-bottom: 1rem;
+}
