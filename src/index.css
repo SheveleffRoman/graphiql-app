@@ -3,3 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.ͼ1.cm-focused {
+  outline: none;
+}
+
+.ͼ2 .cm-activeLine {
+  background-color: transparent;
+}
