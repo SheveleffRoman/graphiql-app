@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import GraphiqlIDE from './pages/GraphiqlIDE';
 import Home from './pages/Home';
-
+import Login from './pages/Login';
+import Register from './pages/Register';
+import './firebase';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -10,6 +12,14 @@ const router = createBrowserRouter([
   {
     path: 'graphiql',
     element: <GraphiqlIDE />,
+  },
+  {
+    path: 'login',
+    element: <Login />,
+  },
+  {
+    path: 'register',
+    element: <Register />,
   },
 ]);
 

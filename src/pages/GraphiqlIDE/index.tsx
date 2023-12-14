@@ -5,11 +5,9 @@ export interface IAppProps {}
 
 export default function GraphiqlIDE() {
   return (
-    <div>
-      <h1>Graphiql IDE</h1>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </div>
+    <>
+      <h1>GraphiQl IDE</h1>
+      <Link to="/">Home</Link>
+    </>
   );
 }
