@@ -7,6 +7,7 @@ import InputAPI from '../../components/inputAPI/InputAPI';
 import { useCallback, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
+import { useAppSelector } from '../../hooks/redux-hooks';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -20,12 +21,10 @@ export default function GraphiqlIDE() {
   const [dataAxios, setDataAxios] = useState(null);
   const [value, setValue] = useState(startQuery);
   const [error, setError] = useState<AxiosError | SyntaxError | null>(null);
-  const [endpoint, setEndpoint] = useState(
-    'https://rickandmortyapi.com/graphql'
-  );
   const [variables, setVariables] = useState('{}');
   const [headers, setHeaders] = useState('{}');
   const [editor, SetEditor] = useState(true);
+  const { endpoint } = useAppSelector((state) => state.editor);
 
   const fetchData = async () => {
     try {
@@ -60,11 +59,6 @@ export default function GraphiqlIDE() {
     fetchData();
   };
 
-  const handleConnectApi = (endpoint: string) => {
-    console.log('Connecting to API with endpoint:', endpoint);
-    setEndpoint(endpoint);
-  };
-
   const onChange = useCallback((val: string) => {
     setValue(val);
   }, []);
@@ -83,7 +77,7 @@ export default function GraphiqlIDE() {
     <div className={styles.wrapper}>
       <Header />
       <div className={styles.codeWrapper}>
-        <InputAPI onConnectApi={handleConnectApi} />
+        <InputAPI />
         <div className={styles.graphiqlWrapper}>
           <div className={styles.codeSection}>
             <div className={styles.queryEditor}>
@@ -115,7 +109,7 @@ export default function GraphiqlIDE() {
               />
             </div>
             <button onClick={handleClick}>response</button>
-            <Link to={'/login'}>
+            <Link to={'/'}>
               <button>To main</button>
             </Link>
           </div>
@@ -123,10 +117,7 @@ export default function GraphiqlIDE() {
             {error ? (
               <h2>{error.message}</h2>
             ) : (
-              <>
-                {!dataAxios && <></>}
-                {dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>}
-              </>
+              dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
             )}
           </div>
         </div>
