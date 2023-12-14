@@ -21,7 +21,6 @@
     "isomorphic-fetch": "^3.0.0",
     "ra-data-graphql": "^4.16.2",
     "react": "^18.2.0",
-    "react-codemirror2": "^7.3.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
     "react-redux": "^9.0.4",
