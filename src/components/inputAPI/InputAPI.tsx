@@ -1,31 +1,31 @@
 import { ChangeEvent, useState } from 'react';
 import styles from './InputAPI.module.scss';
+import { useAppDispatch } from '../../hooks/redux-hooks';
+import { setAPI } from '../../store/slices/editorSlices';
 
-interface InputAPIProps {
-  onConnectApi: (endpoint: string) => void;
-}
+function InputAPI() {
+  const [value, setValue] = useState('https://rickandmortyapi.com/graphql');
 
-function InputAPI({ onConnectApi }: InputAPIProps) {
-  const [endpoint, setEndpoint] = useState(
-    'https://rickandmortyapi.com/graphql'
-  );
+  const dispatch = useAppDispatch();
 
   const handleChangeEndpoint = (event: ChangeEvent<HTMLInputElement>) => {
-    setEndpoint(event.target.value);
+    setValue(event.target.value);
   };
 
-  const handleConnectApi = () => {
-    onConnectApi(endpoint);
+  const connectApi = () => {
+    dispatch(setAPI({ endpoint: value }));
+    console.log('Connecting to API with endpoint:', value);
   };
+
   return (
     <div className={styles.apiInputWrapper}>
       <input
         className={styles.apiInput}
-        value={endpoint}
+        value={value}
         type="text"
         onChange={handleChangeEndpoint}
       />
-      <button onClick={handleConnectApi}>Connect to api</button>
+      <button onClick={connectApi}>Connect to api</button>
     </div>
   );
 }
