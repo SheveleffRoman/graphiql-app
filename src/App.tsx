@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import './firebase';
+import TestPage from './сomponents/shema/test-shema';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: 'register',
     element: <Register />,
+  },
+  {
+    path: 'test', // удалить в итоговой сборке
+    element: <TestPage />,
   },
 ]);
 
