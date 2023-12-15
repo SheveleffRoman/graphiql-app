@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { TSchema, TGloss, TType, IDocsItem, TField, QUERY_FOR_SHEMA } from './types';
+import {
+  TSchema,
+  TGloss,
+  TType,
+  IDocsItem,
+  TField,
+  QUERY_FOR_SHEMA,
+} from './types';
 import ShemaItems from './shema-items';
-import './styles.scss'
+import './styles.scss';
 
 export type TDocProps = {
   url: string;
@@ -16,6 +23,7 @@ function GraphQLSchema(props: TDocProps) {
   const [itemFileds, setItemFileds] = useState<IDocsItem | null>(null);
   const [isLoading, setisLoading] = useState(false);
   const [er, setEr] = useState<string | null>(null);
+  // const { endpoint } = useAppSelector((state) => state.editor);
 
   useEffect(() => {
     const fetchDocumentation = async () => {
@@ -33,10 +41,13 @@ function GraphQLSchema(props: TDocProps) {
         const result = await response.json();
         setSchema(result.data);
         setisLoading(true);
-      } 
-      catch (error) {
+        setEr(null);
+      } catch (error) {
         setisLoading(true);
-        const message=(error instanceof Error) ? error.message : 'Error fetching GraphQL documentation';
+        const message =
+          error instanceof Error
+            ? error.message
+            : 'Error fetching GraphQL documentation';
         setEr(message);
       }
     };
