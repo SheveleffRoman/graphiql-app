@@ -25,6 +25,7 @@ export default function GraphiqlIDE() {
   const [variables, setVariables] = useState('{}');
   const [headers, setHeaders] = useState('{}');
   const [editor, SetEditor] = useState(true);
+  const [schemaOpen, setSchemaOpen] = useState(false);
   const { endpoint } = useAppSelector((state) => state.editor);
 
   const fetchData = async () => {
@@ -71,6 +72,10 @@ export default function GraphiqlIDE() {
   const onChangeHeaders = useCallback((val: string) => {
     setHeaders(val);
   }, []);
+
+  const onSchemaButtonClick = () => {
+    setSchemaOpen((prevState) => !prevState);
+  };
 
   const onVariablesView = () => SetEditor(true);
   const onHeadersView = () => SetEditor(false);
@@ -120,9 +125,23 @@ export default function GraphiqlIDE() {
             ) : (
               dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
             )}
-            {endpoint && <GraphQLSchema url={endpoint} />}
           </div>
         </div>
+      </div>
+      <div
+        className={`${styles.schemaWrapper} ${
+          schemaOpen ? styles.schemaOpen : ''
+        }`}
+      >
+        <div className={styles.schemaButtons}>
+          <div
+            className={styles.schemaOpenButton}
+            onClick={onSchemaButtonClick}
+          >
+            {schemaOpen ? 'Close' : 'Open'} schema
+          </div>
+        </div>
+        {endpoint && <GraphQLSchema url={endpoint} />}
       </div>
       <Footer />
     </div>
