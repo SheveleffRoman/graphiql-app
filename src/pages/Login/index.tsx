@@ -7,6 +7,7 @@ import styles from './LoginForm.module.scss';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/slices/userSlices';
 import { useAppDispatch } from '../../hooks/redux-hooks';
+import { useLocalization } from '../../context/local';
 
 interface Data {
   email: string;
@@ -29,6 +30,7 @@ const Login: FC = () => {
     mode: 'all',
   });
   const dispatch = useAppDispatch();
+  const { texts } = useLocalization();
 
   const onSubmit = (data: Data) => {
     const auth = getAuth();
@@ -48,32 +50,32 @@ const Login: FC = () => {
 
   return (
     <div className={styles['login-container']}>
-      <h2>Login</h2>
+      <h2>{texts.login}</h2>
       <form
         className={styles['form-container']}
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className={styles['form-group']}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">{texts.email}</label>
           <input type="email" {...register('email')} />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
 
         <div className={styles['form-group']}>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">{texts.password}</label>
           <input type="password" {...register('password')} />
           {errors.password && <p>{errors.password.message}</p>}
         </div>
 
         <div className={styles['button-container']}>
           <button type="submit" disabled={!isDirty || isSubmitting || !isValid}>
-            Login
+          {texts.login}
           </button>
         </div>
       </form>
 
       <p className={styles['registration-link']}>
-        Don&apos;t have an account? <Link to="/register">Register here</Link>.
+       {texts.newUser}<Link to="/register">{texts.newUserLink}</Link>.
       </p>
     </div>
   );

@@ -4,18 +4,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import useAuth from '../../hooks/useAuth';
 import { removeUser } from '../../store/slices/userSlices';
+import { useLocalization } from '../../context/local';
 
 export default function Home() {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
   const dispatch = useAppDispatch();
+  const { texts } = useLocalization();
   useEffect(() => {
     !isAuth && navigate('/login');
   }, [isAuth, navigate]);
-
+ 
   return (
     <div>
-      <h1>Home GraphiQL</h1>
+      <p>{texts.welcomeText}</p>
 
       <nav>
         <Link to="graphiql">GraphiQL IDE</Link>
