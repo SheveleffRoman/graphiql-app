@@ -1,8 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import './firebase';
+import { lazy, Suspense } from 'react';
+
+const GraphiqlIDE = lazy(() => import('./pages/GraphiqlIDE'));
+const Login = lazy(() => import('./pages/Login'));
+const Home = lazy(() => import('./pages/Home'));
+const Register = lazy(() => import('./pages/Register'));
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -10,10 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'graphiql',
-    lazy: async () => {
-      const { GraphiqlIDE } = await import('../src/pages/GraphiqlIDE');
-      return { Component: GraphiqlIDE };
-    },
+    element: <GraphiqlIDE />,
   },
   {
     path: 'login',
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<div>LOADINGGGGGG</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;
