@@ -8,8 +8,9 @@ import { useCallback, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
+import GraphQLSchema from '../../сomponents/shema';
 
-export function GraphiqlIDE() {
+export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
     characters(page: $page) {
       results {
@@ -119,6 +120,7 @@ export function GraphiqlIDE() {
             ) : (
               dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
             )}
+            {endpoint && <GraphQLSchema url={endpoint} />}
           </div>
         </div>
       </div>
