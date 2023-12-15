@@ -8,7 +8,7 @@ import { useCallback, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
-import GraphQLSchema from '../../сomponents/shema';
+import GraphQLSchema from '../../components/shema';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
