@@ -9,7 +9,7 @@ import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
 
-export default function GraphiqlIDE() {
+export function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
     characters(page: $page) {
       results {

@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import GraphiqlIDE from './pages/GraphiqlIDE';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -11,7 +10,10 @@ const router = createBrowserRouter([
   },
   {
     path: 'graphiql',
-    element: <GraphiqlIDE />,
+    lazy: async () => {
+      const { GraphiqlIDE } = await import('../src/pages/GraphiqlIDE');
+      return { Component: GraphiqlIDE };
+    },
   },
   {
     path: 'login',
