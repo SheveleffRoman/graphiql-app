@@ -1,0 +1,41 @@
+@import '../../index.scss';
+
+.switch-lang {
+  width: 110px;
+  text-align: left;
+  cursor: pointer;
+  z-index: 50;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.current-lang {
+  padding: 3px 5px 0px 5px;
+  border-radius: 5px;
+}
+
+.lang-flag {
+  width: 20px;
+  display: inline-block;
+}
+
+.lang-text {
+  display: inline-block;
+  margin: 2px 0 0 5px;
+  vertical-align: top;
+}
+
+.lang-dropdown {
+  margin: 2px 0 0 0;
+}
+
+.selecting-lang {
+  padding: 3px 5px 3px 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: $link-color-hover;
+    color: #fff;
+  }
+}

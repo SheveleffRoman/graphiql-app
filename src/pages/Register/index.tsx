@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/slices/userSlices';
 import { useAppDispatch } from '../../hooks/redux-hooks';
+import { useLocalization } from '../../context/local';
 
 interface IRegistrationForm {
   username: string;
@@ -36,6 +37,7 @@ const schema = Yup.object().shape({
 
 const Register: FC = () => {
   const navigate = useNavigate();
+  const { texts } = useLocalization();
   const {
     register,
     handleSubmit,
@@ -64,13 +66,13 @@ const Register: FC = () => {
 
   return (
     <div className={styles['registration-container']}>
-      <h2>Registration</h2>
+      <h2>{texts.registration}</h2>
       <form
         className={styles['form-container']}
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className={styles['form-group']}>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">{texts.username}</label>
           <input type="text" {...register('username')} />
           {touchedFields.username && errors.username && (
             <p className={styles['error-message']}>{errors.username.message}</p>
@@ -78,7 +80,7 @@ const Register: FC = () => {
         </div>
 
         <div className={styles['form-group']}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">{texts.email}</label>
           <input type="text" {...register('email')} />
           {touchedFields.email && errors.email && (
             <p className={styles['error-message']}>{errors.email.message}</p>
@@ -86,7 +88,7 @@ const Register: FC = () => {
         </div>
 
         <div className={styles['form-group']}>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">{texts.password}</label>
           <input type="password" {...register('password')} />
           {touchedFields.password && errors.password && (
             <p className={styles['error-message']}>{errors.password.message}</p>
@@ -94,7 +96,7 @@ const Register: FC = () => {
         </div>
 
         <div className={styles['form-group']}>
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <label htmlFor="confirmPassword">{texts.confirmPassword}</label>
           <input type="password" {...register('confirmPassword')} />
           {touchedFields.confirmPassword && errors.confirmPassword && (
             <p className={styles['error-message']}>
@@ -105,12 +107,12 @@ const Register: FC = () => {
 
         <div className={styles['button-container']}>
           <button type="submit" disabled={!isDirty || isSubmitting || !isValid}>
-            Register
+          {texts.registration}
           </button>
         </div>
       </form>
       <p className={styles['login-link']}>
-        Already have an account? <Link to="/login">Login here</Link>.
+      {texts. haveAccount}<Link to="/login">{texts.loginHere}</Link>.
       </p>
     </div>
   );
