@@ -8,6 +8,7 @@ import { useCallback, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
+import GraphQLSchema from '../../components/shema';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -24,6 +25,7 @@ export default function GraphiqlIDE() {
   const [variables, setVariables] = useState('{}');
   const [headers, setHeaders] = useState('{}');
   const [editor, SetEditor] = useState(true);
+  const [schemaOpen, setSchemaOpen] = useState(false);
   const { endpoint } = useAppSelector((state) => state.editor);
 
   const fetchData = async () => {
@@ -70,6 +72,10 @@ export default function GraphiqlIDE() {
   const onChangeHeaders = useCallback((val: string) => {
     setHeaders(val);
   }, []);
+
+  const onSchemaButtonClick = () => {
+    setSchemaOpen((prevState) => !prevState);
+  };
 
   const onVariablesView = () => SetEditor(true);
   const onHeadersView = () => SetEditor(false);
@@ -121,6 +127,21 @@ export default function GraphiqlIDE() {
             )}
           </div>
         </div>
+      </div>
+      <div
+        className={`${styles.schemaWrapper} ${
+          schemaOpen ? styles.schemaOpen : ''
+        }`}
+      >
+        <div className={styles.schemaButtons}>
+          <div
+            className={styles.schemaOpenButton}
+            onClick={onSchemaButtonClick}
+          >
+            {schemaOpen ? 'Close' : 'Open'} schema
+          </div>
+        </div>
+        {endpoint && <GraphQLSchema url={endpoint} />}
       </div>
       <Footer />
     </div>

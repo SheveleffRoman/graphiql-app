@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import GraphiqlIDE from './pages/GraphiqlIDE';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import './firebase';
-import TestPage from './сomponents/shema/test-shema';
+import { lazy, Suspense } from 'react';
+
+const GraphiqlIDE = lazy(() => import('./pages/GraphiqlIDE'));
+const Login = lazy(() => import('./pages/Login'));
+const Home = lazy(() => import('./pages/Home'));
+const Register = lazy(() => import('./pages/Register'));
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,14 +24,14 @@ const router = createBrowserRouter([
     path: 'register',
     element: <Register />,
   },
-  {
-    path: 'test', // удалить в итоговой сборке
-    element: <TestPage />,
-  },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<div>LOADINGGGGGG</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;
