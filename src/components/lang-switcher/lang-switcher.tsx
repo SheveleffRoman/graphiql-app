@@ -46,7 +46,7 @@ function LangSwitch() {
     const objText = dataLang[lang].objText;
     setOpen(false);
     setTexts(objText);
-  }, [lang]);
+  }, [lang, setTexts]);
 
   return (
     <>
