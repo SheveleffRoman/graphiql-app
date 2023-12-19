@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState } from 'react';
-import { EN_TEXT, Lang, LocalizationContextProps, LocalizationProviderProp,  TTranslet } from './type-and-const';
+import { LocalizationContextProps, LocalizationProviderProp,  TTranslet } from './type-and-const';
+import { EN_TEXT} from './constants';
 
 const LocalizationContext = createContext<LocalizationContextProps | undefined>(undefined);
 
 const LocalizationProvider = (props : LocalizationProviderProp ) => {
     const {children} = props;
 
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState('en');
   const [texts, setTexts] = useState<TTranslet>(EN_TEXT);
 
   const value = { lang, setLang, texts, setTexts };
