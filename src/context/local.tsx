@@ -1,11 +1,17 @@
 import React, { createContext, useContext, useState } from 'react';
-import { LocalizationContextProps, LocalizationProviderProp,  TTranslet } from './type-and-const';
-import { EN_TEXT} from './constants';
+import {
+  LocalizationContextProps,
+  LocalizationProviderProp,
+  TTranslet,
+} from './types';
+import { EN_TEXT } from './constants';
 
-const LocalizationContext = createContext<LocalizationContextProps | undefined>(undefined);
+const LocalizationContext = createContext<LocalizationContextProps | undefined>(
+  undefined
+);
 
-const LocalizationProvider = (props : LocalizationProviderProp ) => {
-    const {children} = props;
+const LocalizationProvider = (props: LocalizationProviderProp) => {
+  const { children } = props;
 
   const [lang, setLang] = useState('en');
   const [texts, setTexts] = useState<TTranslet>(EN_TEXT);
@@ -22,7 +28,9 @@ const LocalizationProvider = (props : LocalizationProviderProp ) => {
 const useLocalization = () => {
   const context = useContext(LocalizationContext);
   if (!context) {
-    throw new Error('useLocalization must be used within a LocalizationProvider');
+    throw new Error(
+      'useLocalization must be used within a LocalizationProvider'
+    );
   }
   return context;
 };
