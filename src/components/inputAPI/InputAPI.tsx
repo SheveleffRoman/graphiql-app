@@ -2,11 +2,12 @@ import { ChangeEvent, useState } from 'react';
 import styles from './InputAPI.module.scss';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { setAPI } from '../../store/slices/editorSlices';
+import { useLocalization } from '../../context/local';
 
 function InputAPI() {
   const [value, setValue] = useState('https://rickandmortyapi.com/graphql');
-
   const dispatch = useAppDispatch();
+  const { texts } = useLocalization();
 
   const handleChangeEndpoint = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -25,7 +26,7 @@ function InputAPI() {
         type="text"
         onChange={handleChangeEndpoint}
       />
-      <button onClick={connectApi}>Connect to api</button>
+      <button onClick={connectApi}>{texts.connectAPI}</button>
     </div>
   );
 }
