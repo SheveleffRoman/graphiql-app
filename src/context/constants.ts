@@ -6,13 +6,22 @@ export const RU_TEXT = {
   newUser: 'У вас нет учетной записи? ',
   newUserLink: 'Зарегистрируйтесь здесь.',
   logOut: 'Выйти',
-  registration: 'Регистрация', 
+  registration: 'Регистрация',
   username: 'Имя пользователя',
   confirmPassword: 'Подтвердите пароль: ',
   loginHere: 'Войти здесь:',
-  haveAccount: 'У вас уже есть учетная запись'
+  haveAccount: 'У вас уже есть учетная запись',
+  connectAPI: 'Подключиться к апи',
+  variables: 'Переменные',
+  headers: 'HTTP Заголовки',
+  response: 'Запрос',
+  toMain: 'На главную',
+  schema: 'схему',
+  openSchema: 'открыть',
+  closeSchema: 'закрыть',
+  apiError: 'Ошибка! Такого апи не существует или он недоступен.',
+  syntaxError: 'Невалидный формат JSON'
 };
-
 
 export const EN_TEXT = {
   welcomeText: 'Welcome',
@@ -22,12 +31,21 @@ export const EN_TEXT = {
   newUser: 'Don&apos;t have an account? ',
   newUserLink: 'Register here',
   logOut: 'Log out',
-  registration: 'Registration', 
+  registration: 'Registration',
   username: 'Username',
   confirmPassword: 'Confirm Password: ',
   loginHere: 'Login here:',
-  haveAccount: 'Already have an account?'
-  
+  haveAccount: 'Already have an account?',
+  connectAPI: 'Connect to api',
+  variables: 'Variables',
+  headers: 'HTTP Headers',
+  response: 'Response',
+  toMain: 'To main',
+  schema: 'schema',
+  openSchema: 'open',
+  closeSchema: 'close',
+  apiError: 'Error! No such API exists or is not available',
+  syntaxError: 'Invalid JSON format',
 };
 
 export const FR_TEXT = {
@@ -38,9 +56,19 @@ export const FR_TEXT = {
   newUser: "Vous n'avez pas de compte? ",
   newUserLink: 'Inscrivez-vous ici',
   logOut: 'Déconnexion',
-  registration: 'Inscription', 
+  registration: 'Inscription',
   username: 'Username',
   confirmPassword: 'Confirmer le mot de passe:',
   loginHere: 'Connectez-vous ici:',
-  haveAccount: "Vous avez déjà un compte?"
+  haveAccount: 'Vous avez déjà un compte?',
+  connectAPI: 'Connectez-vous à l’API',
+  variables: 'variables',
+  headers: 'En-têtes HTTP',
+  response: 'réponse',
+  toMain: 'au principal',
+  schema: 'schéma',
+  openSchema: 'ouvrir',
+  closeSchema: 'fermer',
+  apiError: "Erreur! Aucune API de ce type n'existe ou n'est pas disponible.",
+  syntaxError: 'Format JSON invalide',
 };

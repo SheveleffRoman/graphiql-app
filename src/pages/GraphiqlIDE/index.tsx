@@ -9,6 +9,8 @@ import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
 import GraphQLSchema from '../../components/shema';
+import { useLocalization } from '../../context/local';
+import LangSwitch from '../../components/lang-switcher/lang-switcher';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -27,6 +29,7 @@ export default function GraphiqlIDE() {
   const [editor, SetEditor] = useState(true);
   const [schemaOpen, setSchemaOpen] = useState(false);
   const { endpoint } = useAppSelector((state) => state.editor);
+  const { texts } = useLocalization();
 
   const fetchData = async () => {
     try {
@@ -82,6 +85,7 @@ export default function GraphiqlIDE() {
   return (
     <div className={styles.wrapper}>
       <Header />
+      <LangSwitch />
       <div className={styles.codeWrapper}>
         <InputAPI />
         <div className={styles.graphiqlWrapper}>
@@ -95,8 +99,8 @@ export default function GraphiqlIDE() {
               />
             </div>
             <div>
-              <button onClick={onVariablesView}>Variables</button>
-              <button onClick={onHeadersView}>Http Headers</button>
+              <button onClick={onVariablesView}>{texts.variables}</button>
+              <button onClick={onHeadersView}>{texts.headers}</button>
             </div>
             <div className={styles.editorTool}>
               <CodeMirror
@@ -114,9 +118,9 @@ export default function GraphiqlIDE() {
                 placeholder={'{"from": "example@example.com"}'}
               />
             </div>
-            <button onClick={handleClick}>response</button>
+            <button onClick={handleClick}>{texts.response}</button>
             <Link to={'/'}>
-              <button>To main</button>
+              <button>{texts.toMain}</button>
             </Link>
           </div>
           <div className={styles.graphqlResponse}>
@@ -138,7 +142,7 @@ export default function GraphiqlIDE() {
             className={styles.schemaOpenButton}
             onClick={onSchemaButtonClick}
           >
-            {schemaOpen ? 'Close' : 'Open'} schema
+            {schemaOpen ? texts.closeSchema : texts.openSchema} {texts.schema}
           </div>
         </div>
         {endpoint && <GraphQLSchema url={endpoint} />}
