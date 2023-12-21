@@ -20,7 +20,7 @@ export const RU_TEXT = {
   openSchema: 'открыть',
   closeSchema: 'закрыть',
   apiError: 'Ошибка! Такого апи не существует или он недоступен.',
-  syntaxError: 'Невалидный формат JSON'
+  syntaxError: 'Невалидный формат JSON',
 };
 
 export const EN_TEXT = {
