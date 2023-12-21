@@ -5,7 +5,7 @@ import { useAppDispatch } from '../../hooks/redux-hooks';
 import useAuth from '../../hooks/useAuth';
 import { removeUser } from '../../store/slices/userSlices';
 import { useLocalization } from '../../context/local';
-import LangSwitch from '../../components/lang-switcher/lang-switcher';
+import Header from '../../components/header/Header';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -15,12 +15,12 @@ export default function Home() {
   useEffect(() => {
     !isAuth && navigate('/login');
   }, [isAuth, navigate]);
- 
+
   return (
     <div>
-       <LangSwitch/>
+      <Header />
       <p>{texts.welcomeText}</p>
-     
+
       <nav>
         <Link to="graphiql">GraphiQL IDE</Link>
       </nav>
