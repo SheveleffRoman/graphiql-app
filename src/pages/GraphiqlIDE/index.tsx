@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import CodeMirror from '@uiw/react-codemirror';
@@ -10,7 +9,6 @@ import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
 import GraphQLSchema from '../../components/shema';
 import { useLocalization } from '../../context/local';
-import LangSwitch from '../../components/lang-switcher/lang-switcher';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -85,7 +83,6 @@ export default function GraphiqlIDE() {
   return (
     <div className={styles.wrapper}>
       <Header />
-      <LangSwitch />
       <div className={styles.codeWrapper}>
         <InputAPI />
         <div className={styles.graphiqlWrapper}>
@@ -119,9 +116,6 @@ export default function GraphiqlIDE() {
               />
             </div>
             <button onClick={handleClick}>{texts.response}</button>
-            <Link to={'/'}>
-              <button>{texts.toMain}</button>
-            </Link>
           </div>
           <div className={styles.graphqlResponse}>
             {error ? (

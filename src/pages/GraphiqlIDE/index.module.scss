@@ -38,15 +38,15 @@
 
 .schemaWrapper {
     position: absolute;
-    right: 0;
+    right: -400px;
     background-color: rgb(207, 190, 177);
     height: 100%;
-    width: 0;
+    width: 400px;
     z-index: 55;
 }
 
 .schemaOpen {
-    width: 400px;
+    right: 0;
 }
 
 .schemaButtons {
