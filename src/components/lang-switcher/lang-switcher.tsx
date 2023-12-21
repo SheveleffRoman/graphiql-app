@@ -1,9 +1,9 @@
 import './style.scss';
 import { useLocalization } from '../../context/local';
 import { EN_TEXT, RU_TEXT, FR_TEXT } from '../../context/constants';
-import fr from '../../../public/fr.png';
-import en from '../../../public/en.png';
-import ru from '../../../public/ru.png';
+import fr from '../../assets/fr.png';
+import en from '../../assets/en.png';
+import ru from '../../assets/ru.png';
 import { useEffect, useState } from 'react';
 
 type LangItem = {

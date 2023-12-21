@@ -6,15 +6,17 @@ import useAuth from '../../hooks/useAuth';
 import { removeUser } from '../../store/slices/userSlices';
 import { useLocalization } from '../../context/local';
 import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
   const dispatch = useAppDispatch();
   const { texts } = useLocalization();
+  /*
   useEffect(() => {
     !isAuth && navigate('/login');
-  }, [isAuth, navigate]);
+  }, [isAuth, navigate]); */
 
   return (
     <div>
@@ -26,6 +28,7 @@ export default function Home() {
       </nav>
 
       <button onClick={() => dispatch(removeUser())}>{texts.logOut}</button>
+      <Footer/>
     </div>
   );
 }

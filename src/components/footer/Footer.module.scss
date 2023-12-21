@@ -1,7 +1,44 @@
-.footerExample {
-    height: 50px;
-    background-color: brown;
-    font-weight: bold;
-    width: 100vw;
-    margin-top: 1rem;
+@import '../../index.scss';
+.footer {
+  background-color: $primary-color;
+  width: 100vw;
+  margin-top: 1rem;
+}
+
+.footerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $desctop;
+  margin: 0 auto;
+  padding: 10px 5px;
+  color: #fff;
+}
+.linksGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.footerLink {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    color: rgba(255, 255, 255, 0.64);
+    text-decoration: underline;
+  }
+}
+
+.footerLogo {
+  height: 23px;
+  width: 60px;
+  background-image: url(./../../assets/rss.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+      transform: scale(1.1);
+  }
 }

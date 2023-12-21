@@ -1,18 +1,21 @@
 // basic constants
-$font-stack:    Helvetica, sans-serif;
+$font-stack: Helvetica, sans-serif;
 $font-size: 14px;
 $primary-color: #4821a4;
 $link-color: #3498db;
-$link-color-hover:#085181;
-$error-color:#ff0000;
+$link-color-hover: #085181;
+$error-color: #ff0000;
+$desctop: 1280px;
+$table: 768px;
+$mobil: 320px;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- body{
+body {
   font-family: $font-stack;
-  font-size:  $font-size;
+  font-size: $font-size;
   overflow-x: hidden;
- }
+}
