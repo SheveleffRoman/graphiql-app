@@ -1,6 +1,5 @@
 @import '../../index.scss';
 .footer {
-  background-color: $primary-color;
   width: 100vw;
   margin-top: 1rem;
 }
@@ -12,7 +11,8 @@
   align-items: center;
   max-width: $desctop;
   margin: 0 auto;
-  padding: 10px 5px;
+  padding: 20px 10px;
+  background-color: $link-color;
   color: #fff;
 }
 .linksGroup {
@@ -25,7 +25,7 @@
   text-decoration: none;
   transition: 0.3s;
   &:hover {
-    color: rgba(255, 255, 255, 0.64);
+    color: #ffffffa3;
     text-decoration: underline;
   }
 }
@@ -39,6 +39,6 @@
   transition: 0.3s;
   cursor: pointer;
   &:hover {
-      transform: scale(1.1);
+    transform: scale(1.1);
   }
 }

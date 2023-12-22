@@ -13,11 +13,11 @@ export default function Home() {
   const { isAuth } = useAuth();
   const dispatch = useAppDispatch();
   const { texts } = useLocalization();
-  /*
+ /* 
   useEffect(() => {
     !isAuth && navigate('/login');
-  }, [isAuth, navigate]); */
-
+  }, [isAuth, navigate]); 
+*/
   return (
     <div>
       <Header />

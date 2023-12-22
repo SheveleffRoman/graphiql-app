@@ -48,9 +48,21 @@ function LangSwitch() {
     setTexts(objText);
   }, [lang, setTexts]);
 
+  const handleMouseEnter = () => {
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      <div className="switch-lang">
+      <div
+        className="switch-lang"
+        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
+      >
         <div
           className="current-lang"
           data-lang={activeLang.data}

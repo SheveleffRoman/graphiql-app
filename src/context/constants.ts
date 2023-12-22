@@ -1,5 +1,5 @@
 export const RU_TEXT = {
-  welcomeText: 'Добро пожаловать',
+  welcomeText: 'Добро пожаловать',   
   login: 'Авторизоваться',
   email: 'Email:',
   password: 'Пароль:',
@@ -21,10 +21,14 @@ export const RU_TEXT = {
   closeSchema: 'закрыть',
   apiError: 'Ошибка! Такого апи не существует или он недоступен.',
   syntaxError: 'Невалидный формат JSON',
+  developer1:'Мардон',
+  developer2:'Роман',
+  developer3:'Ольга',
+
 };
 
 export const EN_TEXT = {
-  welcomeText: 'Welcome',
+  welcomeText: 'Welcome',  
   login: 'Login',
   email: 'Email:',
   password: 'Password:',
@@ -46,6 +50,9 @@ export const EN_TEXT = {
   closeSchema: 'close',
   apiError: 'Error! No such API exists or is not available',
   syntaxError: 'Invalid JSON format',
+  developer1:'Mardon',
+  developer2:'Roman',
+  developer3:'Olga',
 };
 
 export const FR_TEXT = {
@@ -71,4 +78,7 @@ export const FR_TEXT = {
   closeSchema: 'fermer',
   apiError: "Erreur! Aucune API de ce type n'existe ou n'est pas disponible.",
   syntaxError: 'Format JSON invalide',
+  developer1:'Mardon',
+  developer2:'Roman',
+  developer3:'Olga',
 };
