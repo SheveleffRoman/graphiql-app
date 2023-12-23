@@ -1,34 +1,43 @@
 import * as React from 'react';
-import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../hooks/redux-hooks';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import { removeUser } from '../../store/slices/userSlices';
 import { useLocalization } from '../../context/local';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
+import './style.scss';
+
 export default function Home() {
-  const navigate = useNavigate();
   const { isAuth } = useAuth();
-  const dispatch = useAppDispatch();
   const { texts } = useLocalization();
- /* 
-  useEffect(() => {
-    !isAuth && navigate('/login');
-  }, [isAuth, navigate]); 
-*/
   return (
-    <div>
+    <>
       <Header />
-      <p>{texts.welcomeText}</p>
+      <section className="wrapper">
+        <h3 className="title">{texts.welcomeTitle}</h3>
+        <p className="text-block">{texts.welcomeText}</p>
+        {!isAuth && (
+          <p className="text-block">
+            {' '}
+            <span>{texts.welcomeText2}</span>
+            <Link to="/login" className="link">
+              {texts.login}
+            </Link>
+             {' / '}
+            <Link to="/register" className="link">
+              {texts.registration}
+            </Link>
+            .
+          </p>
+        )}
+        {isAuth && (
+          <Link to="/graphiql" className="link">
+            {texts.welcomeText3}
+          </Link>
+        )}
+      </section>
 
-      <nav>
-        <Link to="graphiql">GraphiQL IDE</Link>
-      </nav>
-
-      <button onClick={() => dispatch(removeUser())}>{texts.logOut}</button>
-      <Footer/>
-    </div>
+      <Footer />
+    </>
   );
 }

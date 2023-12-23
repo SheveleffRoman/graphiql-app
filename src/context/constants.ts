@@ -1,16 +1,21 @@
 export const RU_TEXT = {
-  welcomeText: 'Добро пожаловать',   
+  welcomeTitle:'Уважаемые ценители кода!',
+  welcomeText:`Приветствуем вас в нашем приложении.
+  Мы - команда энтузиастов, которые забросили оливье и мандарины, оставили родных веселиться под ёлкой и с головой погрузились в увлекательный мир React! 
+  И вот - наш финальный проект перед вами.`,
+  welcomeText2:'Для начала работы необходимо авторизоваться ',
+  welcomeText3:'Приятного времяпрепровождения!',
   login: 'Авторизоваться',
   email: 'Email:',
   password: 'Пароль:',
   newUser: 'У вас нет учетной записи? ',
   newUserLink: 'Зарегистрируйтесь здесь.',
   logOut: 'Выйти',
-  registration: 'Регистрация',
+  registration: 'Зарегистрироваться',
   username: 'Имя пользователя',
   confirmPassword: 'Подтвердите пароль: ',
-  loginHere: 'Войти здесь:',
-  haveAccount: 'У вас уже есть учетная запись',
+  loginHere: 'Войти здесь',
+  haveAccount: 'У вас уже есть учетная запись? ',
   connectAPI: 'Подключиться к апи',
   variables: 'Переменные',
   headers: 'HTTP Заголовки',
@@ -28,7 +33,12 @@ export const RU_TEXT = {
 };
 
 export const EN_TEXT = {
-  welcomeText: 'Welcome',  
+  welcomeTitle:'Dear code lovers!',
+  welcomeText:`Welcome to our application! 
+  We are a team of enthusiasts who put aside the stuffed turkey and gingerbread, left our loved ones to have fun under the tree and plunged into the exciting world of React.
+  And here is our final project in front of you.`,
+  welcomeText2:'To get started, you need to log in ',
+  welcomeText3:'Enjoy your time!',   
   login: 'Login',
   email: 'Email:',
   password: 'Password:',
@@ -38,7 +48,7 @@ export const EN_TEXT = {
   registration: 'Registration',
   username: 'Username',
   confirmPassword: 'Confirm Password: ',
-  loginHere: 'Login here:',
+  loginHere: 'Login here',
   haveAccount: 'Already have an account?',
   connectAPI: 'Connect to api',
   variables: 'Variables',
@@ -56,7 +66,12 @@ export const EN_TEXT = {
 };
 
 export const FR_TEXT = {
-  welcomeText: 'Bienvenue',
+  welcomeTitle:'Chers amateurs de code!',
+  welcomeText:`Bienvenue sur notre application! 
+  Nous sommes une équipe de passionnés qui ont laissé de côté les huîtres et la bûche de Noël, laissant leurs proches s'amuser sous le sapin, et plongés à corps perdu dans l'univers passionnant de React!
+  Et maintenant, notre projet final est devant vous.`,
+  welcomeText2:'Tout d’abord, vous devez vous authentifier ',
+  welcomeText3:'Profitez de votre temps!',  
   login: 'Se connecter',
   email: 'Email:',
   password: 'Mot de passe:',
@@ -66,8 +81,8 @@ export const FR_TEXT = {
   registration: 'Inscription',
   username: 'Username',
   confirmPassword: 'Confirmer le mot de passe:',
-  loginHere: 'Connectez-vous ici:',
-  haveAccount: 'Vous avez déjà un compte?',
+  loginHere: 'Connectez-vous ici',
+  haveAccount: 'Vous avez déjà un compte? ',
   connectAPI: 'Connectez-vous à l’API',
   variables: 'variables',
   headers: 'En-têtes HTTP',
