@@ -9,6 +9,7 @@ import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
 import GraphQLSchema from '../../components/shema';
 import { useLocalization } from '../../context/local';
+import { BASE_SETUP } from './codeMirrorSetup';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -94,6 +95,8 @@ export default function GraphiqlIDE() {
                 width="700px"
                 onChange={onChange}
                 value={value}
+                theme={'dark'}
+                basicSetup={BASE_SETUP}
               />
             </div>
             <div>
@@ -107,6 +110,8 @@ export default function GraphiqlIDE() {
                 onChange={onChangeVariables}
                 style={{ display: editor ? 'block' : 'none' }}
                 placeholder={'{"page": 5}'}
+                theme={'dark'}
+                basicSetup={BASE_SETUP}
               />
               <CodeMirror
                 height="150px"
@@ -114,6 +119,8 @@ export default function GraphiqlIDE() {
                 onChange={onChangeHeaders}
                 style={{ display: !editor ? 'block' : 'none' }}
                 placeholder={'{"from": "example@example.com"}'}
+                theme={'dark'}
+                basicSetup={BASE_SETUP}
               />
             </div>
             <button onClick={handleClick}>{texts.response}</button>
