@@ -14,12 +14,15 @@ interface Data {
   password: string;
 }
 
-const schema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Email is required'),
-  password: Yup.string().required('Password is required'),
-});
-
 const Login: FC = () => {
+  const { texts } = useLocalization();
+
+  const schema = Yup.object().shape({
+    email: Yup.string()
+      .email(texts.errorEmail)
+      .required(texts.errorEmailRequired),
+    password: Yup.string().required(texts.errorPasswordRequired),
+  });
   const navigate = useNavigate();
   const {
     register,
@@ -30,7 +33,6 @@ const Login: FC = () => {
     mode: 'all',
   });
   const dispatch = useAppDispatch();
-  const { texts } = useLocalization();
 
   const onSubmit = (data: Data) => {
     const auth = getAuth();
@@ -69,13 +71,14 @@ const Login: FC = () => {
 
         <div className={styles['button-container']}>
           <button type="submit" disabled={!isDirty || isSubmitting || !isValid}>
-          {texts.login}
+            {texts.login}
           </button>
         </div>
       </form>
 
       <p className={styles['registration-link']}>
-       {texts.newUser}<Link to="/register">{texts.newUserLink}</Link>.
+        {texts.newUser}
+        <Link to="/register">{texts.newUserLink}</Link>.
       </p>
     </div>
   );

@@ -1,16 +1,22 @@
+@import '../../index.scss';
+
 .wrapper {
     margin: 0;
+    margin-top: $headerV;
+    max-width: $desctop;
     display: flex;
     flex-direction: column;
     min-width: 320px;
     min-height: 100vh;
-    overflow: hidden;
+    margin-top: $headerV;
+    max-width: $desctop;
+    overflow: hidden;   
 }
 
 .codeWrapper {
     margin: 0 50px;
     padding: 10px;
-    background-color: beige;
+    background-color: beige;   
     flex: 1;
 }
 
@@ -42,7 +48,7 @@
     background-color: rgb(207, 190, 177);
     height: 100%;
     width: 400px;
-    z-index: 55;
+    z-index: 48;
 }
 
 .schemaOpen {

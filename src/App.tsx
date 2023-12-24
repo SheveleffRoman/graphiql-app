@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './firebase';
 import { lazy, Suspense } from 'react';
+import Preloader from './components/preloader';
+
 
 const GraphiqlIDE = lazy(() => import('./pages/GraphiqlIDE'));
 const Login = lazy(() => import('./pages/Login'));
@@ -28,8 +30,8 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Suspense fallback={<div>LOADINGGGGGG</div>}>
-      <RouterProvider router={router} />
+    <Suspense fallback={<Preloader />}>
+      <RouterProvider router={router} />   
     </Suspense>
   );
 }

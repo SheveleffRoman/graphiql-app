@@ -81,8 +81,9 @@ export default function GraphiqlIDE() {
   const onVariablesView = () => SetEditor(true);
   const onHeadersView = () => SetEditor(false);
   return (
-    <div className={styles.wrapper}>
-      <Header />
+    <>
+    <Header />
+    <div className={styles.wrapper}>      
       <div className={styles.codeWrapper}>
         <InputAPI />
         <div className={styles.graphiqlWrapper}>
@@ -140,8 +141,10 @@ export default function GraphiqlIDE() {
           </div>
         </div>
         {endpoint && <GraphQLSchema url={endpoint} />}
-      </div>
-      <Footer />
+      </div>      
     </div>
+    <Footer />
+    </>
+    
   );
 }

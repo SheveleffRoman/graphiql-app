@@ -4,6 +4,7 @@
   width: 110px;
   text-align: left;
   cursor: pointer;
+  background-color: #fff;
   z-index: 50;
 }
 
@@ -24,7 +25,9 @@
 }
 
 .lang-dropdown {
-  margin: 2px 0 0 0;
+  // margin: 2px 0 0 0;
+  background-color: #fff;
+  padding: 2px 5px;
   position: absolute;
 }
 

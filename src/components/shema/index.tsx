@@ -9,6 +9,8 @@ import {
 } from './types';
 import ShemaItems from './shema-items';
 import './styles.scss';
+import { useLocalization } from '../../context/local';
+import Preloader from '../preloader';
 
 export type TDocProps = {
   url: string;
@@ -16,6 +18,7 @@ export type TDocProps = {
 
 function GraphQLSchema(props: TDocProps) {
   const { url } = props; // брать из стора
+  const { texts } = useLocalization();
   const [schema, setSchema] = useState<TSchema | null>(null);
   const [queryShema, setQuerySchema] = useState<TType | null>(null);
   const [gloss, setGloss] = useState<TGloss | null>(null);
@@ -47,13 +50,13 @@ function GraphQLSchema(props: TDocProps) {
         const message =
           error instanceof Error
             ? error.message
-            : 'Error fetching GraphQL documentation';
+            : texts.errorShema;
         setEr(message);
       }
     };
 
     fetchDocumentation();
-  }, [url]);
+  }, [url, texts.errorShema]);
 
   useEffect(() => {
     if (!schema) return;
@@ -102,7 +105,7 @@ function GraphQLSchema(props: TDocProps) {
     (gloss && gloss[name]) || f;
 
   if (!isLoading) {
-    return <p>Loading...</p>;
+    return <Preloader />;
   }
   if (er) {
     return <p>{er}</p>;
