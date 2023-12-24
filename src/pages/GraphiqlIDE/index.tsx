@@ -10,6 +10,7 @@ import { useAppSelector } from '../../hooks/redux-hooks';
 import GraphQLSchema from '../../components/shema';
 import { useLocalization } from '../../context/local';
 import { BASE_SETUP } from './codeMirrorSetup';
+import { clsx } from 'clsx';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -83,75 +84,92 @@ export default function GraphiqlIDE() {
   const onHeadersView = () => SetEditor(false);
   return (
     <>
-    <Header />
-    <div className={styles.wrapper}>      
-      <div className={styles.codeWrapper}>
-        <InputAPI />
-        <div className={styles.graphiqlWrapper}>
-          <div className={styles.codeSection}>
-            <div className={styles.queryEditor}>
-              <CodeMirror
-                height="200px"
-                width="700px"
-                onChange={onChange}
-                value={value}
-                theme={'dark'}
-                basicSetup={BASE_SETUP}
-              />
+      <Header />
+      <div className={styles.wrapper}>
+        <div className={styles.codeWrapper}>
+          <InputAPI />
+          <div className={styles.graphiqlWrapper}>
+            <div className={styles.codeSection}>
+              <div className={styles.queryEditor}>
+                <CodeMirror
+                  height="200px"
+                  width="700px"
+                  onChange={onChange}
+                  value={value}
+                  theme={'dark'}
+                  basicSetup={BASE_SETUP}
+                />
+              </div>
+              <div className={styles.editorToolButtons}>
+                <button
+                  className={clsx(styles.editorToolBtn, {
+                    [styles.editorToolBtnActive]: editor,
+                  })}
+                  onClick={onVariablesView}
+                >
+                  {texts.variables}
+                </button>
+                <button
+                  className={clsx(styles.editorToolBtn, {
+                    [styles.editorToolBtnActive]: !editor,
+                  })}
+                  onClick={onHeadersView}
+                >
+                  {texts.headers}
+                </button>
+              </div>
+              <div className={styles.editorTool}>
+                <CodeMirror
+                  height="150px"
+                  width="700px"
+                  onChange={onChangeVariables}
+                  style={{ display: editor ? 'block' : 'none' }}
+                  placeholder={'{"page": 5}'}
+                  theme={'dark'}
+                  basicSetup={BASE_SETUP}
+                />
+                <CodeMirror
+                  height="150px"
+                  width="700px"
+                  onChange={onChangeHeaders}
+                  style={{ display: !editor ? 'block' : 'none' }}
+                  placeholder={'{"from": "example@example.com"}'}
+                  theme={'dark'}
+                  basicSetup={BASE_SETUP}
+                />
+              </div>
+              <div className={styles.responseBtnContainer}>
+                <button className={styles.editorToolBtn} onClick={handleClick}>
+                  {texts.response}
+                </button>
+              </div>
             </div>
-            <div>
-              <button onClick={onVariablesView}>{texts.variables}</button>
-              <button onClick={onHeadersView}>{texts.headers}</button>
+            <div className={styles.graphqlResponse}>
+              {error ? (
+                <h2>{error.message}</h2>
+              ) : (
+                dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
+              )}
             </div>
-            <div className={styles.editorTool}>
-              <CodeMirror
-                height="150px"
-                width="700px"
-                onChange={onChangeVariables}
-                style={{ display: editor ? 'block' : 'none' }}
-                placeholder={'{"page": 5}'}
-                theme={'dark'}
-                basicSetup={BASE_SETUP}
-              />
-              <CodeMirror
-                height="150px"
-                width="700px"
-                onChange={onChangeHeaders}
-                style={{ display: !editor ? 'block' : 'none' }}
-                placeholder={'{"from": "example@example.com"}'}
-                theme={'dark'}
-                basicSetup={BASE_SETUP}
-              />
-            </div>
-            <button onClick={handleClick}>{texts.response}</button>
           </div>
-          <div className={styles.graphqlResponse}>
-            {error ? (
-              <h2>{error.message}</h2>
-            ) : (
-              dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
-            )}
+        </div>
+        <div
+          className={`${styles.schemaWrapper} ${
+            schemaOpen ? styles.schemaOpen : ''
+          }`}
+        >
+          <div className={styles.schemaButtons}>
+            <div
+              className={styles.schemaOpenButton}
+              onClick={onSchemaButtonClick}
+            >
+              {schemaOpen ? texts.closeSchema : texts.openSchema} {texts.schema}
+            </div>
           </div>
+          {endpoint && <GraphQLSchema url={endpoint} />}
         </div>
       </div>
-      <div
-        className={`${styles.schemaWrapper} ${
-          schemaOpen ? styles.schemaOpen : ''
-        }`}
-      >
-        <div className={styles.schemaButtons}>
-          <div
-            className={styles.schemaOpenButton}
-            onClick={onSchemaButtonClick}
-          >
-            {schemaOpen ? texts.closeSchema : texts.openSchema} {texts.schema}
-          </div>
-        </div>
-        {endpoint && <GraphQLSchema url={endpoint} />}
-      </div>      
-    </div>
-    <Footer />
+      <Footer />
     </>
-    
   );
 }

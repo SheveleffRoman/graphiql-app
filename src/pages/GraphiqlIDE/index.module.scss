@@ -38,6 +38,43 @@
 .editorTool {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.editorToolButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.editorToolBtn {
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 125px;
+    height: 100%;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.editorToolBtn:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+}
+
+.editorToolBtnActive {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+.responseBtnContainer {
+    width: 100%;
+    height: 20px;
 }
 
 .queryEditor {
