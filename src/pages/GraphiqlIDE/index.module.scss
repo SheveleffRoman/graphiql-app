@@ -10,13 +10,13 @@
     min-height: 100vh;
     margin-top: $headerV;
     max-width: $desctop;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 .codeWrapper {
     margin: 0 50px;
     padding: 10px;
-    background-color: beige;   
+    background-color: #fff;
     flex: 1;
 }
 
@@ -25,12 +25,14 @@
     flex-direction: row;
     justify-content: space-around;
     height: 70vh;
+    gap: 10px;
 }
 
 .graphqlResponse {
     overflow: auto;
     width: 500px;
-    background-color: cadetblue;
+    color: #abb2bf;
+    background-color: #282c34;
 }
 
 .editorTool {
@@ -79,5 +81,5 @@
     transform: rotate(-90deg);
     transform-origin: left bottom;
     margin-top: 65px;
-    width: 70px;
+    width: 75px;
 }
