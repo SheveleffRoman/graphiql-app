@@ -26,7 +26,9 @@ function InputAPI() {
         type="text"
         onChange={handleChangeEndpoint}
       />
-      <button onClick={connectApi}>{texts.connectAPI}</button>
+      <button className={styles.apiBtn} onClick={connectApi}>
+        {texts.connectAPI}
+      </button>
     </div>
   );
 }
