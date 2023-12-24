@@ -16,28 +16,30 @@ interface IRegistrationForm {
   confirmPassword: string;
 }
 
-const schema = Yup.object().shape({
-  username: Yup.string()
-    .required('Username is required')
-    .matches(
-      /^[A-Z][a-zA-Z]*$/,
-      'Username must start with an uppercase letter'
-    ),
-  email: Yup.string().email('Invalid email').required('Email is required'),
-  password: Yup.string()
-    .required('Password is required')
-    .matches(
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
-      'Password must include at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character'
-    ),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), ''], 'Passwords must match')
-    .required('Confirm Password is required'),
-});
+
 
 const Register: FC = () => {
   const navigate = useNavigate();
   const { texts } = useLocalization();
+  const schema = Yup.object().shape({
+    username: Yup.string()
+      .required(texts.errorUserRequired)
+      .matches(
+        /^[A-Z][a-zA-Z]*$/,
+        texts.errorUser
+      ),
+    email: Yup.string().email(texts.errorEmail).required(texts.errorEmailRequired),
+    password: Yup.string()
+      .required(texts.errorPasswordRequired)
+      .matches(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
+        texts.errorPassword
+      ),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'), ''], texts.erroeMatch)
+      .required(texts.errorConfimPassword),
+  });
+
   const {
     register,
     handleSubmit,

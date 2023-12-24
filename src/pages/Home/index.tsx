@@ -7,6 +7,7 @@ import Footer from '../../components/footer/Footer';
 
 import './style.scss';
 
+
 export default function Home() {
   const { isAuth } = useAuth();
   const { texts } = useLocalization();
@@ -23,7 +24,7 @@ export default function Home() {
             <Link to="/login" className="link">
               {texts.login}
             </Link>
-             {' / '}
+            {' / '}
             <Link to="/register" className="link">
               {texts.registration}
             </Link>
@@ -36,7 +37,6 @@ export default function Home() {
           </Link>
         )}
       </section>
-
       <Footer />
     </>
   );
