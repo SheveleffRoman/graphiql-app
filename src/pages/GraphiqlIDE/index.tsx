@@ -144,10 +144,11 @@ export default function GraphiqlIDE() {
                   basicSetup={BASE_SETUP}
                 />
               </div>
-              <div className={styles.responseBtnContainer}>
+              <div className={styles.editorToolButtons}>
                 <button className={styles.editorToolBtn} onClick={handleClick}>
                   {texts.response}
                 </button>
+                <button className={styles.editorToolBtn}>{texts.prettify}</button>
               </div>
             </div>
             <div className={styles.graphqlResponse}>
