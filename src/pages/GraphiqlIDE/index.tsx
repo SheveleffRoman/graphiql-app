@@ -11,6 +11,7 @@ import GraphQLSchema from '../../components/shema';
 import { useLocalization } from '../../context/local';
 import { BASE_SETUP } from './codeMirrorSetup';
 import { clsx } from 'clsx';
+import { formatGraphQLCode } from './codeFormatter';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -62,6 +63,11 @@ export default function GraphiqlIDE() {
 
   const handleClick = () => {
     fetchData();
+  };
+
+  const formatCode = async () => {
+    const formatted = await formatGraphQLCode(value);
+    setValue(formatted);
   };
 
   const onChange = useCallback((val: string) => {
@@ -148,7 +154,7 @@ export default function GraphiqlIDE() {
                 <button className={styles.editorToolBtn} onClick={handleClick}>
                   {texts.response}
                 </button>
-                <button className={styles.editorToolBtn}>
+                <button className={styles.editorToolBtn} onClick={formatCode}>
                   {texts.prettify}
                 </button>
               </div>
