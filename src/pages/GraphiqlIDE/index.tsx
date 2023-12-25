@@ -148,7 +148,9 @@ export default function GraphiqlIDE() {
                 <button className={styles.editorToolBtn} onClick={handleClick}>
                   {texts.response}
                 </button>
-                <button className={styles.editorToolBtn}>{texts.prettify}</button>
+                <button className={styles.editorToolBtn}>
+                  {texts.prettify}
+                </button>
               </div>
             </div>
             <div className={styles.graphqlResponse}>
