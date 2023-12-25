@@ -92,8 +92,10 @@ export default function GraphiqlIDE() {
             <div className={styles.codeSection}>
               <div className={styles.queryEditor}>
                 <CodeMirror
-                  height="200px"
+                  height="45vh"
+                  minWidth="320px"
                   width="700px"
+                  maxWidth="700px"
                   onChange={onChange}
                   value={value}
                   theme={'dark'}
@@ -121,7 +123,9 @@ export default function GraphiqlIDE() {
               <div className={styles.editorTool}>
                 <CodeMirror
                   height="150px"
+                  minWidth="320px"
                   width="700px"
+                  maxWidth="700px"
                   onChange={onChangeVariables}
                   style={{ display: editor ? 'block' : 'none' }}
                   placeholder={'{"page": 5}'}
@@ -130,7 +134,9 @@ export default function GraphiqlIDE() {
                 />
                 <CodeMirror
                   height="150px"
+                  minWidth="320px"
                   width="700px"
+                  maxWidth="700px"
                   onChange={onChangeHeaders}
                   style={{ display: !editor ? 'block' : 'none' }}
                   placeholder={'{"from": "example@example.com"}'}
