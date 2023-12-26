@@ -39,6 +39,7 @@ export const RU_TEXT = {
     'Пароль должен содержать не менее 8 символов, одну заглавную букву, одну строчную букву, одну цифру и один специальный символ',
   erroeMatch: 'Пароли должны совпадать',
   errorConfimPassword: 'Требуется подтверждение пароля',
+  prettify: 'Выровнить',
 };
 
 export const EN_TEXT = {
@@ -82,6 +83,7 @@ export const EN_TEXT = {
     'Password must include at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character',
   erroeMatch: 'Passwords must match',
   errorConfimPassword: 'Confirm Password is required',
+  prettify: 'Prettify',
 };
 
 export const FR_TEXT = {
@@ -103,9 +105,9 @@ export const FR_TEXT = {
   loginHere: 'Connectez-vous ici',
   haveAccount: 'Vous avez déjà un compte? ',
   connectAPI: 'Connectez-vous à l’API',
-  variables: 'variables',
+  variables: 'Variables',
   headers: 'En-têtes HTTP',
-  response: 'réponse',
+  response: 'Réponse',
   toMain: 'au principal',
   schema: 'schéma',
   openSchema: 'ouvrir',
@@ -125,4 +127,5 @@ export const FR_TEXT = {
     'Le mot de passe doit comprendre au moins 8 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial',
   erroeMatch: 'Les mots de passe doivent correspondre',
   errorConfimPassword: 'Confirmer le mot de passe est requis',
+  prettify: 'Embellir',
 };

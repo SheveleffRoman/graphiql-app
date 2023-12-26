@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^2.0.1",
     "@uiw/react-codemirror": "^4.21.21",
     "axios": "^1.6.2",
+    "clsx": "^2.0.0",
     "firebase": "^10.7.1",
     "graphiql": "^3.0.10",
     "graphql": "^16.8.1",
