@@ -166,22 +166,25 @@ export default function GraphiqlIDE() {
                 dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
               )}
             </div>
-          </div>
-        </div>
-        <div
-          className={`${styles.schemaWrapper} ${
-            schemaOpen ? styles.schemaOpen : ''
-          }`}
-        >
-          <div className={styles.schemaButtons}>
             <div
-              className={styles.schemaOpenButton}
-              onClick={onSchemaButtonClick}
+              className={`${styles.schemaWrapper} ${
+                schemaOpen ? styles.schemaOpen : ''
+              }`}
             >
-              {schemaOpen ? texts.closeSchema : texts.openSchema} {texts.schema}
+              <div className={styles.schemaButtons}>
+                <div
+                  className={styles.schemaOpenButton}
+                  onClick={onSchemaButtonClick}
+                >
+                  {schemaOpen ? texts.closeSchema : texts.openSchema}{' '}
+                  {texts.schema}
+                </div>
+              </div>
+              <div className={styles.schemaBlock}>
+                {endpoint && <GraphQLSchema url={endpoint} />}
+              </div>
             </div>
           </div>
-          {endpoint && <GraphQLSchema url={endpoint} />}
         </div>
       </div>
       <Footer />
