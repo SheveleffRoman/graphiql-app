@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -8,6 +8,8 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/slices/userSlices';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { useLocalization } from '../../context/local';
+import useAuth from '../../hooks/useAuth';
+import { Alert } from '@mui/material';
 
 interface IRegistrationForm {
   username: string;
@@ -16,19 +18,18 @@ interface IRegistrationForm {
   confirmPassword: string;
 }
 
-
-
 const Register: FC = () => {
   const navigate = useNavigate();
+  const { isAuth } = useAuth();
   const { texts } = useLocalization();
+  const [loginError, setLoginError] = useState({ message: '' });
   const schema = Yup.object().shape({
     username: Yup.string()
       .required(texts.errorUserRequired)
-      .matches(
-        /^[A-Z][a-zA-Z]*$/,
-        texts.errorUser
-      ),
-    email: Yup.string().email(texts.errorEmail).required(texts.errorEmailRequired),
+      .matches(/^[A-Z][a-zA-Z]*$/, texts.errorUser),
+    email: Yup.string()
+      .email(texts.errorEmail)
+      .required(texts.errorEmailRequired),
     password: Yup.string()
       .required(texts.errorPasswordRequired)
       .matches(
@@ -49,20 +50,21 @@ const Register: FC = () => {
     mode: 'all',
   });
   const dispatch = useAppDispatch();
-
+  useEffect(() => {
+    isAuth && navigate('/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth]);
   const onSubmit: SubmitHandler<IRegistrationForm> = (data) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then(({ user }) => {
-        console.log(user);
-
         dispatch(
           setUser({ email: user.email, token: user.refreshToken, id: user.uid })
         );
         navigate('/');
       })
       .catch((error) => {
-        console.log(error.message);
+        setLoginError({ message: error.message });
       });
   };
 
@@ -109,13 +111,17 @@ const Register: FC = () => {
 
         <div className={styles['button-container']}>
           <button type="submit" disabled={!isDirty || isSubmitting || !isValid}>
-          {texts.registration}
+            {texts.registration}
           </button>
         </div>
       </form>
       <p className={styles['login-link']}>
-      {texts. haveAccount}<Link to="/login">{texts.loginHere}</Link>.
+        {texts.haveAccount}
+        <Link to="/login">{texts.loginHere}</Link>.
       </p>
+      {loginError.message && (
+        <Alert severity="error">{loginError.message}</Alert>
+      )}
     </div>
   );
 };

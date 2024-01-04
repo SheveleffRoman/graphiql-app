@@ -7,7 +7,6 @@ import Footer from '../../components/footer/Footer';
 
 import './style.scss';
 
-
 export default function Home() {
   const { isAuth } = useAuth();
   const { texts } = useLocalization();

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLocalization } from '../../context/local';
 import LangSwitch from '../lang-switcher/lang-switcher';
 import styles from './Header.module.scss';
@@ -9,6 +9,7 @@ import { removeUser } from '../../store/slices/userSlices';
 import { useEffect, useState } from 'react';
 
 function Header() {
+  const navigate = useNavigate();
   const { texts } = useLocalization();
   const { isAuth } = useAuth();
   const dispatch = useAppDispatch();
@@ -29,26 +30,38 @@ function Header() {
 
   const handleClick = () => {
     dispatch(removeUser());
+    navigate('/');
   };
   return (
     <header className={styles.header}>
-    <div
-      className={`${styles.headerWrapper} ${
-        isSticky ? styles.stickyWrapper : ''
-      }`}
-    >
-      <Link to={'/'}>
-        <img className={styles.logo} src={logoPath} />
-      </Link>
-      <div className={styles.actionBlock}>
-        <LangSwitch />
-        {isAuth && (
-          <button className={styles.signout} onClick={handleClick}>
-            {texts.logOut}
-          </button>
+      <div
+        className={`${styles.headerWrapper} ${
+          isSticky ? styles.stickyWrapper : ''
+        }`}
+      >
+        <Link to={'/'}>
+          <img className={styles.logo} src={logoPath} />
+        </Link>
+        <div className={styles.actionBlock}>
+          <LangSwitch />
+          {isAuth && (
+            <button className={styles.signout} onClick={handleClick}>
+              {texts.logOut}
+            </button>
+          )}
+        </div>
+        {!isAuth && (
+          <p className="text-block">
+            <Link to="/login" className="link">
+              {texts.login}
+            </Link>
+            {' / '}
+            <Link to="/register" className="link">
+              {texts.registration}
+            </Link>
+          </p>
         )}
       </div>
-    </div>
     </header>
   );
 }

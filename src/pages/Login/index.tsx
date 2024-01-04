@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -8,6 +8,8 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { setUser } from '../../store/slices/userSlices';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { useLocalization } from '../../context/local';
+import useAuth from '../../hooks/useAuth';
+import { Alert } from '@mui/material';
 
 interface Data {
   email: string;
@@ -16,12 +18,18 @@ interface Data {
 
 const Login: FC = () => {
   const { texts } = useLocalization();
-
+  const { isAuth } = useAuth();
+  const [loginError, setLoginError] = useState({ message: '' });
   const schema = Yup.object().shape({
     email: Yup.string()
       .email(texts.errorEmail)
       .required(texts.errorEmailRequired),
-    password: Yup.string().required(texts.errorPasswordRequired),
+    password: Yup.string()
+      .required(texts.errorPasswordRequired)
+      .matches(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
+        texts.errorPassword
+      ),
   });
   const navigate = useNavigate();
   const {
@@ -33,7 +41,10 @@ const Login: FC = () => {
     mode: 'all',
   });
   const dispatch = useAppDispatch();
-
+  useEffect(() => {
+    isAuth && navigate('/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth]);
   const onSubmit = (data: Data) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, data.email, data.password)
@@ -45,9 +56,8 @@ const Login: FC = () => {
         navigate('/');
       })
       .catch((error) => {
-        console.log(error.message);
+        setLoginError({ message: error.message });
       });
-    console.log(data);
   };
 
   return (
@@ -80,6 +90,9 @@ const Login: FC = () => {
         {texts.newUser}
         <Link to="/register">{texts.newUserLink}</Link>.
       </p>
+      {loginError.message && (
+        <Alert severity="error">{loginError.message}</Alert>
+      )}
     </div>
   );
 };
