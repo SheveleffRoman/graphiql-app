@@ -1,9 +1,6 @@
 import './style.scss';
 import { useLocalization } from '../../context/local';
 import { EN_TEXT, RU_TEXT, FR_TEXT } from '../../context/constants';
-import fr from '../../assets/fr.png';
-import en from '../../assets/en.png';
-import ru from '../../assets/ru.png';
 import { useEffect, useState } from 'react';
 
 type LangItem = {
@@ -20,19 +17,19 @@ type DataLang = {
 const dataLang: DataLang = {
   en: {
     data: 'en',
-    path: en,
+    path: '../src/assets/en.png',
     text: 'English',
     objText: EN_TEXT,
   },
   ru: {
     data: 'ru',
-    path: ru,
+    path: '../src/assets/ru.png',
     text: 'Русский',
     objText: RU_TEXT,
   },
   fr: {
     data: 'fr',
-    path: fr,
+    path: '../src/assets/fr.png',
     text: 'Français',
     objText: FR_TEXT,
   },
