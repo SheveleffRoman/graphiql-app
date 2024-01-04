@@ -8,7 +8,7 @@
   flex-direction: column;
   min-width: 320px;
   width: 100%;
-  min-height: 80vh;
+  min-height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -35,7 +35,7 @@
   color: #abb2bf;
   background-color: #282c34;
   min-height: 300px;
-  height: 65vh;
+  height: 90vh;
 }
 
 .editorTool {
@@ -50,7 +50,7 @@
   gap: 0.5rem;
   width: 100%;
   height: 20px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .editorToolBtn {
@@ -60,7 +60,7 @@
   border-radius: 8px;
   width: 125px;
   height: 100%;
-  transition: 0.3s;
+  transition: .3s;
   cursor: pointer;
 }
 
@@ -87,7 +87,7 @@
 .schemaWrapper {
   position: absolute;
   right: 0;
-  background-color: #fff;
+  background-color: #FFF;
   height: 90%;
   width: 0;
   z-index: 40;
@@ -96,9 +96,9 @@
 
 .schemaOpen {
   width: 400px;
-  border-left: 2px solid #d6d8de;
-  box-shadow: 0px 8px 16px -6px rgba(24, 39, 75, 0.08),
-    0px 6px 8px -6px rgba(24, 39, 75, 0.12);
+  border-left: 2px solid #D6D8DE;
+  box-shadow: 0px 8px 16px -6px rgba(24, 39, 75, 0.08), 0px 6px 8px -6px rgba(24, 39, 75, 0.12);
+
 }
 
 .schemaButtons {
