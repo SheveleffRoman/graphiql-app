@@ -163,7 +163,11 @@ export default function GraphiqlIDE() {
               {error ? (
                 <h2>{error.message}</h2>
               ) : (
-                dataAxios && <pre>{JSON.stringify(dataAxios, null, 2)}</pre>
+                dataAxios && (
+                  <pre role="responseSection">
+                    {JSON.stringify(dataAxios, null, 2)}
+                  </pre>
+                )
               )}
             </div>
             <div
