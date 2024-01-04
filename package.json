@@ -80,6 +80,10 @@
     "transform": {
       "^.+\\.tsx?$": "babel-jest",
       "^.+\\.scss$": "jest-transform-stub"
-    }
+    },
+    "testEnvironmentOptions": {
+      "customExportConditions": []
+    },
+    "setupFiles": ["./jest.polyfills.js"]
   }
 }
