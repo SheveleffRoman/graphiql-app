@@ -30,14 +30,14 @@ describe('LangSwitch component', () => {
   test('opens and closes language dropdown on mouse enter/leave', () => {
     render(<LangSwitch />);
     expect(screen.queryByText(/Français/i)).not.toBeInTheDocument();
-    fireEvent.mouseEnter(screen.getByTestId('mouse'));
+    fireEvent.mouseEnter(screen.getByTestId('switch'));
     expect(screen.queryByText(/Français/i)).toBeInTheDocument();
-    fireEvent.mouseLeave(screen.getByTestId('mouse'));
+    fireEvent.mouseLeave(screen.getByTestId('switch'));
     expect(screen.queryByText(/Français/i)).not.toBeInTheDocument();
   });
   test('switches language on click', () => {
     render(<LangSwitch />);
-    fireEvent.mouseEnter(screen.getByTestId('mouse'));
+    fireEvent.mouseEnter(screen.getByTestId('switch'));
     const fr = screen.getByText(/Français/i);
     fireEvent.click(fr);
     expect(useLocalization().setLang).toHaveBeenCalledWith('fr');

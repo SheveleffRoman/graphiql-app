@@ -17,7 +17,7 @@ export type TDocProps = {
 };
 
 function GraphQLSchema(props: TDocProps) {
-  const { url } = props; // брать из стора
+  const { url } = props; 
   const { texts } = useLocalization();
   const [schema, setSchema] = useState<TSchema | null>(null);
   const [queryShema, setQuerySchema] = useState<TType | null>(null);
@@ -26,8 +26,7 @@ function GraphQLSchema(props: TDocProps) {
   const [itemFileds, setItemFileds] = useState<IDocsItem | null>(null);
   const [isLoading, setisLoading] = useState(false);
   const [er, setEr] = useState<string | null>(null);
-  // const { endpoint } = useAppSelector((state) => state.editor);
-
+ 
   useEffect(() => {
     const fetchDocumentation = async () => {
       try {

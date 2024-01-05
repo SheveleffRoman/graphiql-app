@@ -60,7 +60,7 @@ function LangSwitch() {
         className="switch-lang"
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
-        data-testid='mouse'
+        data-testid='switch'
       >
         <div
           className="current-lang"

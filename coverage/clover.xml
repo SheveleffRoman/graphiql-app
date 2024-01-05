@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704457678096" clover="3.2.0">
-  <project timestamp="1704457678096" name="All files">
-    <metrics statements="40" coveredstatements="38" conditionals="6" coveredconditionals="5" methods="10" coveredmethods="9" elements="56" coveredelements="52" complexity="0" loc="40" ncloc="40" packages="3" files="7" classes="7"/>
+<coverage generated="1704479685869" clover="3.2.0">
+  <project timestamp="1704479685869" name="All files">
+    <metrics statements="72" coveredstatements="58" conditionals="12" coveredconditionals="10" methods="20" coveredmethods="12" elements="104" coveredelements="80" complexity="0" loc="72" ncloc="72" packages="6" files="12" classes="12"/>
     <package name="components.footer">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Footer.module.scss" path="C:\projects\graphiql-app\src\components\footer\Footer.module.scss">
@@ -21,23 +21,50 @@
         <line num="4" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="components.header">
+      <metrics statements="18" coveredstatements="14" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="3"/>
+      <file name="Header.module.scss" path="C:\projects\graphiql-app\src\components\header\Header.module.scss">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="Header.tsx" path="C:\projects\graphiql-app\src\components\header\Header.tsx">
+        <metrics statements="17" coveredstatements="13" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="3"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="4" type="stmt"/>
+      </file>
+    </package>
     <package name="components.lang-switcher">
       <metrics statements="18" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
       <file name="lang-switcher.tsx" path="C:\projects\graphiql-app\src\components\lang-switcher\lang-switcher.tsx">
         <metrics statements="17" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="6"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
-        <line num="43" count="8" type="stmt"/>
-        <line num="44" count="3" type="stmt"/>
-        <line num="45" count="3" type="stmt"/>
-        <line num="46" count="3" type="stmt"/>
-        <line num="49" count="8" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="40" count="12" type="stmt"/>
+        <line num="41" count="12" type="stmt"/>
+        <line num="42" count="12" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="49" count="12" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
-        <line num="53" count="8" type="stmt"/>
+        <line num="53" count="12" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="57" count="8" type="stmt"/>
+        <line num="57" count="12" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
         <line num="76" count="12" type="cond" truecount="2" falsecount="0"/>
         <line num="77" count="8" type="stmt"/>
@@ -45,31 +72,60 @@
       </file>
       <file name="style.scss" path="C:\projects\graphiql-app\src\components\lang-switcher\style.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
       </file>
     </package>
     <package name="context">
       <metrics statements="15" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="constants.ts" path="C:\projects\graphiql-app\src\context\constants.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="89" count="2" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="89" count="4" type="stmt"/>
       </file>
       <file name="local.tsx" path="C:\projects\graphiql-app\src\context\local.tsx">
         <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
         <line num="19" count="3" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
         <line num="29" count="3" type="stmt"/>
         <line num="30" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
         <line num="35" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="redux-hooks.tsx" path="C:\projects\graphiql-app\src\hooks\redux-hooks.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="useAuth.tsx" path="C:\projects\graphiql-app\src\hooks\useAuth.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.slices">
+      <metrics statements="9" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="userSlices.ts" path="C:\projects\graphiql-app\src\store\slices\userSlices.ts">
+        <metrics statements="9" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
       </file>
     </package>
   </project>
