@@ -113,6 +113,7 @@ export default function GraphiqlIDE() {
                   value={value}
                   theme={'dark'}
                   basicSetup={BASE_SETUP}
+                  role="queryEditor"
                 />
               </div>
               <div className={styles.editorToolButtons}>
@@ -129,6 +130,7 @@ export default function GraphiqlIDE() {
                     [styles.editorToolBtnActive]: !editor,
                   })}
                   onClick={onHeadersView}
+                  role="headersToolBtn"
                 >
                   {texts.headers}
                 </button>
@@ -144,6 +146,7 @@ export default function GraphiqlIDE() {
                   placeholder={'{"page": 5}'}
                   theme={'dark'}
                   basicSetup={BASE_SETUP}
+                  role="variablesTool"
                 />
                 <CodeMirror
                   height="150px"
@@ -155,6 +158,7 @@ export default function GraphiqlIDE() {
                   placeholder={'{"from": "example@example.com"}'}
                   theme={'dark'}
                   basicSetup={BASE_SETUP}
+                  role="headersTool"
                 />
               </div>
               <div className={styles.editorToolButtons}>
@@ -168,7 +172,7 @@ export default function GraphiqlIDE() {
             </div>
             <div className={styles.graphqlResponse}>
               {error ? (
-                <h2>{error.message}</h2>
+                <h2 role="errorResponse">{error.message}</h2>
               ) : (
                 dataAxios && (
                   <pre role="responseSection">
