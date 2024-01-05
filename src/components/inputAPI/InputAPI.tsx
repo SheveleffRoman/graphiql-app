@@ -5,7 +5,7 @@ import { setAPI } from '../../store/slices/editorSlices';
 import { useLocalization } from '../../context/local';
 
 function InputAPI() {
-  const [value, setValue] = useState('https://rickandmortyapi.com/graphql');
+  const [value, setValue] = useState('');
   const dispatch = useAppDispatch();
   const { texts } = useLocalization();
 
@@ -25,8 +25,9 @@ function InputAPI() {
         value={value}
         type="text"
         onChange={handleChangeEndpoint}
+        role="inputAPI"
       />
-      <button className={styles.apiBtn} onClick={connectApi}>
+      <button className={styles.apiBtn} onClick={connectApi} role="connectAPI">
         {texts.connectAPI}
       </button>
     </div>
