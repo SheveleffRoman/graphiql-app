@@ -15,12 +15,12 @@ import { formatGraphQLCode } from './codeFormatter';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
-    characters(page: $page) {
-      results {
-        name
+      characters(page: $page) {
+        results {
+          name
+        }
       }
-    }
-}`;
+  }`;
 
   const [dataAxios, setDataAxios] = useState(null);
   const [value, setValue] = useState(startQuery);
@@ -71,7 +71,7 @@ export default function GraphiqlIDE() {
   };
 
   const onChange = useCallback((val: string) => {
-    setValue(val);
+    return setValue(val);
   }, []);
 
   const onChangeVariables = useCallback((val: string) => {
@@ -155,7 +155,11 @@ export default function GraphiqlIDE() {
                 />
               </div>
               <div className={styles.editorToolButtons}>
-                <button className={styles.editorToolBtn} onClick={handleClick}>
+                <button
+                  className={styles.editorToolBtn}
+                  onClick={handleClick}
+                  role="responseBtn"
+                >
                   {texts.response}
                 </button>
                 <button className={styles.editorToolBtn} onClick={formatCode}>
