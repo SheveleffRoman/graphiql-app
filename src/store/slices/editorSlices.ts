@@ -6,7 +6,7 @@ export interface editorState {
 }
 
 const initialState = {
-  endpoint: 'https://rickandmortyapi.com/graphql',
+  endpoint: '',
 };
 
 export const editorSlice = createSlice({
