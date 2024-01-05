@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704382236460" clover="3.2.0">
-  <project timestamp="1704382236461" name="All files">
-    <metrics statements="40" coveredstatements="30" conditionals="6" coveredconditionals="4" methods="10" coveredmethods="7" elements="56" coveredelements="41" complexity="0" loc="40" ncloc="40" packages="3" files="7" classes="7"/>
+<coverage generated="1704457678096" clover="3.2.0">
+  <project timestamp="1704457678096" name="All files">
+    <metrics statements="40" coveredstatements="38" conditionals="6" coveredconditionals="5" methods="10" coveredmethods="9" elements="56" coveredelements="52" complexity="0" loc="40" ncloc="40" packages="3" files="7" classes="7"/>
     <package name="components.footer">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Footer.module.scss" path="C:\projects\graphiql-app\src\components\footer\Footer.module.scss">
@@ -49,27 +49,27 @@
       </file>
     </package>
     <package name="context">
-      <metrics statements="15" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="15" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="constants.ts" path="C:\projects\graphiql-app\src\context\constants.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
       </file>
       <file name="local.tsx" path="C:\projects\graphiql-app\src\context\local.tsx">
-        <metrics statements="12" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
       </file>
     </package>
   </project>

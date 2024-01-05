@@ -29,7 +29,6 @@ describe('Footer component', () => {
   test('displays correct links with correct href', () => {
     render(<Footer />);    
     const developerLinks = screen.getAllByRole('link');
-    screen.debug(developerLinks);
     expect(developerLinks).toHaveLength(4);
     expect(developerLinks[0]).toHaveTextContent('Developer 1');
     expect(developerLinks[0]).toHaveAttribute('href', LINK_DEV1);
