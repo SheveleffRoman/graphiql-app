@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -79,35 +79,35 @@
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export async function <span class="fstat-no" title="function not covered" >formatGraphQLCode(</span>code: string) {
-    let formattedCode = <span class="cstat-no" title="statement not covered" >code;</span>
-    let currentIndentation = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export async function formatGraphQLCode(code: string) {
+    let formattedCode = code;
+    let currentIndentation = 0;
   
-<span class="cstat-no" title="statement not covered" >    formattedCode = formattedCode.replace(/(\{|})/g, <span class="fstat-no" title="function not covered" >(_</span>match, p1) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (p1 === '{') {</span>
-<span class="cstat-no" title="statement not covered" >        currentIndentation += 2;</span>
-<span class="cstat-no" title="statement not covered" >        return `{\n${' '.repeat(currentIndentation)}`;</span>
+    formattedCode = formattedCode.replace(/(\{|})/g, (_match, p1) =&gt; {
+      if (p1 === '{') {
+        currentIndentation += 2;
+        return `{\n${' '.repeat(currentIndentation)}`;
       } else {
-<span class="cstat-no" title="statement not covered" >        currentIndentation -= 2;</span>
-<span class="cstat-no" title="statement not covered" >        return `\n${' '.repeat(currentIndentation)}}`;</span>
+        currentIndentation -= 2;
+        return `\n${' '.repeat(currentIndentation)}}`;
       }
     });
   
-<span class="cstat-no" title="statement not covered" >    return formattedCode;</span>
+    return formattedCode;
   }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -115,7 +115,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-05T16:06:24.622Z
+                at 2024-01-05T23:57:52.706Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
