@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useLocalization } from '../../context/local';
 import LangSwitch from '../lang-switcher/lang-switcher';
 import styles from './Header.module.scss';
-import logoPath from '../../assets/logo.png';
 import useAuth from '../../hooks/useAuth';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { removeUser } from '../../store/slices/userSlices';
@@ -40,7 +39,7 @@ function Header() {
         }`}
       >
         <Link to={'/'}>
-          <img className={styles.logo} src={logoPath} />
+          <img className={styles.logo} src="../src/assets/logo.png" />
         </Link>
         <div className={styles.actionBlock}>
           <LangSwitch />

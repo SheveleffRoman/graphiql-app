@@ -70,18 +70,32 @@ const Login: FC = () => {
       >
         <div className={styles['form-group']}>
           <label htmlFor="email">{texts.email}</label>
-          <input id="email" type="email" {...register('email')} />
+          <input
+            id="email"
+            type="email"
+            role="emailInput"
+            {...register('email')}
+          />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
 
         <div className={styles['form-group']}>
           <label htmlFor="password">{texts.password}</label>
-          <input id="password" type="password" {...register('password')} />
+          <input
+            id="password"
+            type="password"
+            role="passwordInput"
+            {...register('password')}
+          />
           {errors.password && <p>{errors.password.message}</p>}
         </div>
 
         <div className={styles['button-container']}>
-          <button type="submit" disabled={!isDirty || isSubmitting || !isValid}>
+          <button
+            type="submit"
+            disabled={!isDirty || isSubmitting || !isValid}
+            role="loginBtn"
+          >
             {texts.login}
           </button>
         </div>

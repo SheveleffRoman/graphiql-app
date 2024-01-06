@@ -1,50 +1,99 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import {
+  render,
+  screen,
+  fireEvent,
+  cleanup,
+  act,
+  waitFor
+} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Register from '../pages/Register';
+import Register from '../pages/Register/index';
 import { Provider } from 'react-redux';
 import { setupStore } from '../store';
 import { LocalizationProvider } from '../context/local';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const store = setupStore();
 
+afterEach(cleanup);
+
+jest.mock('firebase/auth', () => {
+  return {
+    auth: jest.fn(),
+    createUserWithEmailAndPassword: jest.fn(() => {
+      return new Promise((resolve) => {
+        resolve(null);
+      });
+    }),
+    getAuth: jest.fn(),
+  };
+});
+
 describe('Register Form', () => {
-  test('renders registration form correctly', () => {
+  it('renders registration form correctly', () => {
     render(
-      <Provider store={store}>
-        <LocalizationProvider>
-          <Register />
-        </LocalizationProvider>
-      </Provider>,
-      { wrapper: MemoryRouter }
+      <MemoryRouter>
+        <Provider store={store}>
+          <LocalizationProvider>
+            <Register />
+          </LocalizationProvider>
+        </Provider>
+      </MemoryRouter>
     );
 
-    expect(screen.queryAllByText('Registration')).toHaveLength(2);
-    expect(screen.getByLabelText('Username')).toBeInTheDocument();
-    expect(screen.getByLabelText('Email:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Password:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Confirm Password:')).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'Registration' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('inputUsername')).toBeInTheDocument();
+    expect(screen.getByRole('inputEmail')).toBeInTheDocument();
+    expect(screen.getByRole('inputPassword')).toBeInTheDocument();
+    expect(screen.getByRole('inputConfirmPassword')).toBeInTheDocument();
+    expect(screen.getByRole('registerBtn')).toBeInTheDocument();
+    expect(screen.getByRole('registerBtn')).toBeDisabled();
   });
 
-  test('submits the form with valid data', async () => {
+  it('submits the form with valid data', async () => {
     render(
-      <Provider store={store}>
-        <LocalizationProvider>
-          <Register />
-        </LocalizationProvider>
-      </Provider>,
-      { wrapper: MemoryRouter }
+      <MemoryRouter>
+        <Provider store={store}>
+          <LocalizationProvider>
+            <Register />
+          </LocalizationProvider>
+        </Provider>
+      </MemoryRouter>
     );
 
-    userEvent.type(screen.getByLabelText(/Username/i), 'testuser');
-    userEvent.type(screen.getByLabelText(/Email/i), 'test@example.com');
-    userEvent.type(screen.getByLabelText(/Confirm Password/i), 'Test@123');
+    const inputUsername = screen.getByRole('inputUsername') as HTMLInputElement;
+    const inputEmail = screen.getByRole('inputEmail') as HTMLInputElement;
+    const inputPassword = screen.getByRole('inputPassword') as HTMLInputElement;
+    const inputConfirmPassword = screen.getByRole(
+      'inputConfirmPassword'
+    ) as HTMLInputElement;
+    const registerBtn = screen.getByRole('registerBtn') as HTMLInputElement;
 
-    fireEvent.click(screen.getByRole('button', { name: 'Registration' }));
+    await act(async () => {
+      fireEvent.change(inputUsername, {
+        target: { value: 'Roman' },
+      });
+
+      fireEvent.change(inputEmail, {
+        target: { value: 'roman@yandex.com' },
+      });
+
+      fireEvent.change(inputPassword, {
+        target: { value: 'Roman123)' },
+      });
+
+      fireEvent.change(inputConfirmPassword, {
+        target: { value: 'Roman123)' },
+      });
+    });
+
+    await act(async () => {
+      fireEvent.click(registerBtn);
+    });
+
+    await waitFor(() => {
+      expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, inputEmail.value, inputPassword.value)
+    })
   });
 });
