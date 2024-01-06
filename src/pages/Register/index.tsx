@@ -78,7 +78,12 @@ const Register: FC = () => {
       >
         <div className={styles['form-group']}>
           <label htmlFor="username">{texts.username}</label>
-          <input id="username" type="text" {...register('username')} />
+          <input
+            id="username"
+            type="text"
+            {...register('username')}
+            role="inputUsername"
+          />
           {touchedFields.username && errors.username && (
             <p className={styles['error-message']}>{errors.username.message}</p>
           )}
@@ -86,7 +91,12 @@ const Register: FC = () => {
 
         <div className={styles['form-group']}>
           <label htmlFor="email">{texts.email}</label>
-          <input id="email" type="text" {...register('email')} />
+          <input
+            id="email"
+            type="text"
+            {...register('email')}
+            role="inputEmail"
+          />
           {touchedFields.email && errors.email && (
             <p className={styles['error-message']}>{errors.email.message}</p>
           )}
@@ -94,7 +104,12 @@ const Register: FC = () => {
 
         <div className={styles['form-group']}>
           <label htmlFor="password">{texts.password}</label>
-          <input id="password" type="password" {...register('password')} />
+          <input
+            id="password"
+            type="password"
+            {...register('password')}
+            role="inputPassword"
+          />
           {touchedFields.password && errors.password && (
             <p className={styles['error-message']}>{errors.password.message}</p>
           )}
@@ -106,6 +121,7 @@ const Register: FC = () => {
             id="confirmPassword"
             type="password"
             {...register('confirmPassword')}
+            role="inputConfirmPassword"
           />
           {touchedFields.confirmPassword && errors.confirmPassword && (
             <p className={styles['error-message']}>
@@ -115,7 +131,11 @@ const Register: FC = () => {
         </div>
 
         <div className={styles['button-container']}>
-          <button type="submit" disabled={!isDirty || isSubmitting || !isValid}>
+          <button
+            type="submit"
+            disabled={!isDirty || isSubmitting || !isValid}
+            role="registerBtn"
+          >
             {texts.registration}
           </button>
         </div>
