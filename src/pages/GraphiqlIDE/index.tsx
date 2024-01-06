@@ -78,7 +78,7 @@ export default function GraphiqlIDE() {
   };
 
   const onChange = useCallback((val: string) => {
-    return setValue(val);
+    setValue(val);
   }, []);
 
   const onChangeVariables = useCallback((val: string) => {
