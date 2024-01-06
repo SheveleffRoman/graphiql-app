@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704470784695" clover="3.2.0">
-  <project timestamp="1704470784696" name="All files">
-    <metrics statements="226" coveredstatements="180" conditionals="99" coveredconditionals="55" methods="59" coveredmethods="39" elements="384" coveredelements="274" complexity="0" loc="226" ncloc="226" packages="12" files="26" classes="26"/>
+<coverage generated="1704536880091" clover="3.2.0">
+  <project timestamp="1704536880092" name="All files">
+    <metrics statements="226" coveredstatements="189" conditionals="99" coveredconditionals="57" methods="59" coveredmethods="41" elements="384" coveredelements="287" complexity="0" loc="226" ncloc="226" packages="12" files="26" classes="26"/>
     <package name="components.footer">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Footer.module.scss" path="/Users/anastasia/Desktop/graphiql-app/src/components/footer/Footer.module.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
       <file name="Footer.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/footer/Footer.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="6" count="16" type="stmt"/>
-        <line num="7" count="16" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="6" count="26" type="stmt"/>
+        <line num="7" count="26" type="stmt"/>
       </file>
     </package>
     <package name="components.header">
       <metrics statements="17" coveredstatements="13" conditionals="6" coveredconditionals="4" methods="5" coveredmethods="3"/>
       <file name="Header.module.scss" path="/Users/anastasia/Desktop/graphiql-app/src/components/header/Header.module.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
       <file name="Header.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/header/Header.tsx">
         <metrics statements="16" coveredstatements="12" conditionals="6" coveredconditionals="4" methods="5" coveredmethods="3"/>
-        <line num="11" count="16" type="stmt"/>
-        <line num="12" count="16" type="stmt"/>
-        <line num="13" count="16" type="stmt"/>
-        <line num="14" count="16" type="stmt"/>
-        <line num="15" count="16" type="stmt"/>
-        <line num="17" count="16" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
+        <line num="11" count="26" type="stmt"/>
+        <line num="12" count="26" type="stmt"/>
+        <line num="13" count="26" type="stmt"/>
+        <line num="14" count="26" type="stmt"/>
+        <line num="15" count="26" type="stmt"/>
+        <line num="17" count="26" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="23" count="9" type="stmt"/>
-        <line num="25" count="9" type="stmt"/>
-        <line num="26" count="9" type="stmt"/>
-        <line num="30" count="16" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="26" count="15" type="stmt"/>
+        <line num="30" count="26" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
-        <line num="34" count="16" type="stmt"/>
+        <line num="34" count="26" type="stmt"/>
       </file>
     </package>
     <package name="components.inputAPI">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="InputAPI.module.scss" path="/Users/anastasia/Desktop/graphiql-app/src/components/inputAPI/InputAPI.module.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
       </file>
       <file name="InputAPI.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/inputAPI/InputAPI.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="8" count="24" type="stmt"/>
-        <line num="9" count="24" type="stmt"/>
-        <line num="10" count="24" type="stmt"/>
-        <line num="12" count="24" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="16" count="24" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="21" count="24" type="stmt"/>
+        <line num="8" count="36" type="stmt"/>
+        <line num="9" count="36" type="stmt"/>
+        <line num="10" count="36" type="stmt"/>
+        <line num="12" count="36" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="16" count="36" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="21" count="36" type="stmt"/>
       </file>
     </package>
     <package name="components.lang-switcher">
       <metrics statements="18" coveredstatements="12" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="2"/>
       <file name="lang-switcher.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/lang-switcher/lang-switcher.tsx">
         <metrics statements="17" coveredstatements="11" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="2"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="39" count="21" type="stmt"/>
-        <line num="40" count="21" type="stmt"/>
-        <line num="41" count="21" type="stmt"/>
-        <line num="42" count="21" type="stmt"/>
-        <line num="43" count="9" type="stmt"/>
-        <line num="44" count="9" type="stmt"/>
-        <line num="45" count="9" type="stmt"/>
-        <line num="48" count="21" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="39" count="34" type="stmt"/>
+        <line num="40" count="34" type="stmt"/>
+        <line num="41" count="34" type="stmt"/>
+        <line num="42" count="34" type="stmt"/>
+        <line num="43" count="15" type="stmt"/>
+        <line num="44" count="15" type="stmt"/>
+        <line num="45" count="15" type="stmt"/>
+        <line num="48" count="34" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="52" count="21" type="stmt"/>
+        <line num="52" count="34" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="56" count="21" type="stmt"/>
+        <line num="56" count="34" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
         <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="75" count="0" type="stmt"/>
@@ -84,82 +84,82 @@
       </file>
       <file name="style.scss" path="/Users/anastasia/Desktop/graphiql-app/src/components/lang-switcher/style.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
     </package>
     <package name="components.preloader">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/preloader/index.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="11" type="stmt"/>
+        <line num="4" count="20" type="stmt"/>
       </file>
       <file name="style.scss" path="/Users/anastasia/Desktop/graphiql-app/src/components/preloader/style.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
     </package>
     <package name="components.shema">
       <metrics statements="64" coveredstatements="56" conditionals="57" coveredconditionals="29" methods="15" coveredmethods="11"/>
       <file name="index.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/shema/index.tsx">
         <metrics statements="59" coveredstatements="54" conditionals="44" coveredconditionals="29" methods="13" coveredmethods="11"/>
-        <line num="20" count="16" type="stmt"/>
-        <line num="21" count="16" type="stmt"/>
-        <line num="22" count="16" type="stmt"/>
-        <line num="23" count="16" type="stmt"/>
-        <line num="24" count="16" type="stmt"/>
-        <line num="25" count="16" type="stmt"/>
-        <line num="26" count="16" type="stmt"/>
-        <line num="27" count="16" type="stmt"/>
-        <line num="28" count="16" type="stmt"/>
-        <line num="31" count="16" type="stmt"/>
-        <line num="32" count="8" type="stmt"/>
-        <line num="33" count="8" type="stmt"/>
-        <line num="34" count="8" type="stmt"/>
-        <line num="44" count="4" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
+        <line num="20" count="26" type="stmt"/>
+        <line num="21" count="26" type="stmt"/>
+        <line num="22" count="26" type="stmt"/>
+        <line num="23" count="26" type="stmt"/>
+        <line num="24" count="26" type="stmt"/>
+        <line num="25" count="26" type="stmt"/>
+        <line num="26" count="26" type="stmt"/>
+        <line num="27" count="26" type="stmt"/>
+        <line num="28" count="26" type="stmt"/>
+        <line num="31" count="26" type="stmt"/>
+        <line num="32" count="13" type="stmt"/>
+        <line num="33" count="13" type="stmt"/>
+        <line num="34" count="13" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
         <line num="51" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="54" count="2" type="stmt"/>
-        <line num="58" count="8" type="stmt"/>
-        <line num="61" count="16" type="stmt"/>
-        <line num="62" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="66" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="70" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="72" count="1" type="stmt"/>
-        <line num="74" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="78" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="80" count="1" type="stmt"/>
-        <line num="81" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="82" count="2" type="stmt"/>
-        <line num="83" count="2" type="stmt"/>
-        <line num="84" count="6" type="stmt"/>
-        <line num="86" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
-        <line num="92" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="97" count="16" type="stmt"/>
+        <line num="58" count="13" type="stmt"/>
+        <line num="61" count="26" type="stmt"/>
+        <line num="62" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="66" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="70" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="74" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="78" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="81" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="82" count="4" type="stmt"/>
+        <line num="83" count="4" type="stmt"/>
+        <line num="84" count="12" type="stmt"/>
+        <line num="86" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="92" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="97" count="26" type="stmt"/>
         <line num="98" count="0" type="stmt"/>
         <line num="99" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="100" count="0" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
-        <line num="104" count="16" type="stmt"/>
-        <line num="105" count="4" type="cond" truecount="3" falsecount="0"/>
-        <line num="107" count="16" type="cond" truecount="2" falsecount="0"/>
-        <line num="108" count="11" type="stmt"/>
-        <line num="110" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="111" count="2" type="stmt"/>
-        <line num="113" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="104" count="26" type="stmt"/>
+        <line num="105" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="107" count="26" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="20" type="stmt"/>
+        <line num="110" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="111" count="1" type="stmt"/>
+        <line num="113" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="114" count="1" type="stmt"/>
-        <line num="116" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="117" count="1" type="stmt"/>
-        <line num="120" count="3" type="stmt"/>
-        <line num="126" count="4" type="stmt"/>
-        <line num="138" count="1" type="stmt"/>
-        <line num="145" count="2" type="stmt"/>
+        <line num="116" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="120" count="6" type="stmt"/>
+        <line num="126" count="8" type="stmt"/>
+        <line num="138" count="2" type="stmt"/>
+        <line num="145" count="4" type="stmt"/>
         <line num="152" count="0" type="stmt"/>
       </file>
       <file name="shema-items.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/components/shema/shema-items.tsx">
@@ -170,162 +170,176 @@
       </file>
       <file name="styles.scss" path="/Users/anastasia/Desktop/graphiql-app/src/components/shema/styles.scss">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
       <file name="types.ts" path="/Users/anastasia/Desktop/graphiql-app/src/components/shema/types.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
       </file>
     </package>
     <package name="context">
       <metrics statements="15" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <file name="constants.ts" path="D:\graphiQL\graphiql-app\src\context\constants.ts">
+      <file name="constants.ts" path="/Users/anastasia/Desktop/graphiql-app/src/context/constants.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="89" count="2" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
       </file>
-      <file name="local.tsx" path="D:\graphiQL\graphiql-app\src\context\local.tsx">
+      <file name="local.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/context/local.tsx">
         <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-        <line num="21" count="5" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="29" count="6" type="stmt"/>
-        <line num="30" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="17" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
+        <line num="17" count="17" type="stmt"/>
+        <line num="19" count="17" type="stmt"/>
+        <line num="21" count="17" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="29" count="174" type="stmt"/>
+        <line num="30" count="174" type="cond" truecount="1" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
+        <line num="35" count="174" type="stmt"/>
       </file>
     </package>
     <package name="hooks">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="redux-hooks.tsx" path="D:\graphiQL\graphiql-app\src\hooks\redux-hooks.tsx">
+      <file name="redux-hooks.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/hooks/redux-hooks.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
+        <line num="4" count="62" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
       </file>
-      <file name="useAuth.tsx" path="D:\graphiQL\graphiql-app\src\hooks\useAuth.tsx">
+      <file name="useAuth.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/hooks/useAuth.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="11" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="45" type="stmt"/>
+        <line num="6" count="26" type="stmt"/>
       </file>
     </package>
     <package name="pages.GraphiqlIDE">
-      <metrics statements="53" coveredstatements="35" conditionals="26" coveredconditionals="18" methods="14" coveredmethods="7"/>
+      <metrics statements="53" coveredstatements="44" conditionals="26" coveredconditionals="20" methods="14" coveredmethods="9"/>
       <file name="codeFormatter.ts" path="/Users/anastasia/Desktop/graphiql-app/src/pages/GraphiqlIDE/codeFormatter.ts">
-        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
       </file>
       <file name="codeMirrorSetup.ts" path="/Users/anastasia/Desktop/graphiql-app/src/pages/GraphiqlIDE/codeMirrorSetup.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
       </file>
-      <file name="index.tsx" path="D:\graphiQL\graphiql-app\src\pages\Login\index.tsx">
-        <metrics statements="17" coveredstatements="12" conditionals="11" coveredconditionals="9" methods="5" coveredmethods="2"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="41" count="4" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="47" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="50" count="4" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
+      <file name="index.module.scss" path="/Users/anastasia/Desktop/graphiql-app/src/pages/GraphiqlIDE/index.module.scss">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/anastasia/Desktop/graphiql-app/src/pages/GraphiqlIDE/index.tsx">
+        <metrics statements="42" coveredstatements="33" conditionals="24" coveredconditionals="18" methods="12" coveredmethods="7"/>
+        <line num="17" count="26" type="stmt"/>
+        <line num="25" count="26" type="stmt"/>
+        <line num="26" count="26" type="stmt"/>
+        <line num="27" count="26" type="stmt"/>
+        <line num="28" count="26" type="stmt"/>
+        <line num="29" count="26" type="stmt"/>
+        <line num="30" count="26" type="stmt"/>
+        <line num="31" count="26" type="stmt"/>
+        <line num="32" count="45" type="stmt"/>
+        <line num="33" count="26" type="stmt"/>
+        <line num="35" count="26" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="40" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="53" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="64" count="4" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="64" count="26" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
+        <line num="68" count="26" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="26" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="77" count="26" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="81" count="26" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="85" count="26" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="89" count="26" type="stmt"/>
+        <line num="90" count="26" type="stmt"/>
+        <line num="91" count="26" type="stmt"/>
       </file>
     </package>
-    <package name="pages.Register">
-      <metrics statements="18" coveredstatements="13" conditionals="19" coveredconditionals="7" methods="5" coveredmethods="2"/>
-      <file name="RegistrationForm.module.scss" path="D:\graphiQL\graphiql-app\src\pages\Register\RegistrationForm.module.scss">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="index.tsx" path="D:\graphiQL\graphiql-app\src\pages\Register\index.tsx">
-        <metrics statements="17" coveredstatements="12" conditionals="19" coveredconditionals="7" methods="5" coveredmethods="2"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="49" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="72" count="2" type="stmt"/>
+    <package name="services">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="fetchService.ts" path="/Users/anastasia/Desktop/graphiql-app/src/services/fetchService.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
       </file>
     </package>
     <package name="store">
-      <metrics statements="19" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
-      <file name="index.ts" path="D:\graphiQL\graphiql-app\src\store\index.ts">
-        <metrics statements="19" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="14" count="2" type="stmt"/>
+      <metrics statements="19" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+      <file name="index.ts" path="/Users/anastasia/Desktop/graphiql-app/src/store/index.ts">
+        <metrics statements="19" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="5" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
       </file>
     </package>
     <package name="store.slices">
-      <metrics statements="13" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="editorSlices.ts" path="D:\graphiQL\graphiql-app\src\store\slices\editorSlices.ts">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+      <metrics statements="13" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="editorSlices.ts" path="/Users/anastasia/Desktop/graphiql-app/src/store/slices/editorSlices.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
       </file>
-      <file name="userSlices.ts" path="D:\graphiQL\graphiql-app\src\store\slices\userSlices.ts">
+      <file name="userSlices.ts" path="/Users/anastasia/Desktop/graphiql-app/src/store/slices/userSlices.ts">
         <metrics statements="9" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
       </file>
     </package>
   </project>
