@@ -1,66 +1,140 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { act } from 'react-dom/test-utils';
+import {
+  act,
+  render,
+  screen,
+  fireEvent,
+  cleanup,
+  waitFor,
+} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Login from '../pages/Login';
+import Login from '../pages/Login/index';
 import { Provider } from 'react-redux';
 import { setupStore } from '../store';
 import { LocalizationProvider } from '../context/local';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
+
 const store = setupStore();
+
+afterEach(cleanup);
+
+jest.mock('firebase/auth', () => {
+  return {
+    auth: jest.fn(),
+    signInWithEmailAndPassword: jest.fn(() => {
+      return new Promise((resolve) => {
+        resolve(null);
+      });
+    }),
+    getAuth: jest.fn(),
+  };
+});
+
 describe('Login Form', () => {
-  test('renders login form correctly', () => {
+  it('renders login form correctly', () => {
     render(
-      <Provider store={store}>
-        <LocalizationProvider>
-          <Login />
-        </LocalizationProvider>
-      </Provider>,
-      { wrapper: MemoryRouter }
+      <MemoryRouter>
+        <Provider store={store}>
+          <LocalizationProvider>
+            <Login />
+          </LocalizationProvider>
+        </Provider>
+      </MemoryRouter>
     );
 
     expect(screen.queryAllByText('Login')).toHaveLength(2);
-    expect(screen.getByLabelText('Email:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Password:')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Login' })).toBeInTheDocument();
+    expect(screen.getByRole('emailInput')).toBeInTheDocument();
+    expect(screen.getByRole('passwordInput')).toBeInTheDocument();
+    expect(screen.getByRole('loginBtn')).toBeInTheDocument();
   });
 
-  test('submits the form with valid data', async () => {
+  it('submits the form with valid data', async () => {
     render(
-      <Provider store={store}>
-        <LocalizationProvider>
-          <Login />
-        </LocalizationProvider>
-      </Provider>,
-      { wrapper: MemoryRouter }
+      <MemoryRouter>
+        <Provider store={store}>
+          <LocalizationProvider>
+            <Login />
+          </LocalizationProvider>
+        </Provider>
+      </MemoryRouter>
     );
 
-    userEvent.type(screen.getByLabelText(/email/i), 'test@example.com');
-    userEvent.type(screen.getByLabelText(/password/i), 'Test@123');
+    const inputEmail = screen.getByRole('emailInput') as HTMLInputElement;
+    const inputPassword = screen.getByRole('passwordInput') as HTMLInputElement;
 
     await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Login' }));
+      fireEvent.change(inputEmail, {
+        target: { value: 'roman@yandex.com' },
+      });
+
+      fireEvent.change(inputPassword, {
+        target: { value: 'Roman123)' },
+      });
+    });
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole('loginBtn'));
+    });
+
+    await waitFor(() => {
+      expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, inputEmail.value, inputPassword.value)
+    })
+  });
+
+  it('displays error message for invalid login', async () => {
+    render(
+      <MemoryRouter>
+        <Provider store={store}>
+          <LocalizationProvider>
+            <Login />
+          </LocalizationProvider>
+        </Provider>
+      </MemoryRouter>
+    );
+
+    const inputEmail = screen.getByRole('emailInput') as HTMLInputElement;
+
+    await act(async () => {
+      fireEvent.change(inputEmail, {
+        target: { value: 'roman' },
+      });
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/Invalid email/)).toBeInTheDocument();
+      expect(screen.getByRole('loginBtn')).toBeDisabled();
     });
   });
 
-  test('displays error message for invalid login', async () => {
+  it('Logs user button is active', async () => {
     render(
-      <Provider store={store}>
-        <LocalizationProvider>
-          <Login />
-        </LocalizationProvider>
-      </Provider>,
-      { wrapper: MemoryRouter }
+      <MemoryRouter>
+        <Provider store={store}>
+          <LocalizationProvider>
+            <Login />
+          </LocalizationProvider>
+        </Provider>
+      </MemoryRouter>
     );
-    userEvent.type(screen.getByLabelText('Email:'), 'invalid-email');
-    userEvent.type(screen.getByLabelText('Password:'), 'weakpassword');
+
+    const inputEmail = screen.getByRole('emailInput') as HTMLInputElement;
+    const inputPassword = screen.getByRole('passwordInput') as HTMLInputElement;
 
     await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Login' }));
+      fireEvent.change(inputEmail, {
+        target: { value: 'roman@yandex.com' },
+      });
+
+      fireEvent.change(inputPassword, {
+        target: { value: 'Roman123)' },
+      });
     });
 
-    expect(screen.getByText(/Email is required/)).toBeInTheDocument();
+    expect(inputEmail).toHaveDisplayValue('roman@yandex.com');
+    expect(inputPassword).toHaveValue('Roman123)');
+    expect(screen.getByRole('loginBtn')).not.toBeDisabled();
   });
 });
