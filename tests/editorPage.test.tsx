@@ -69,12 +69,14 @@ const schemaMock = {
   },
 };
 
-const jsonPlaceHolder = graphql.link('https://rickandmortyapi.com/graphql');
 export const handlers = [
-  jsonPlaceHolder.query('GetCharacters', () => {
-    return HttpResponse.json({
-      data: mockResponse,
-    });
+  graphql.query('GetCharacters', () => {
+    return HttpResponse.json(
+      {
+        data: mockResponse,
+      },
+      { status: 200 }
+    );
   }),
   graphql.query('IntrospectionQuery', () => {
     return HttpResponse.json({
@@ -113,43 +115,6 @@ describe('GraphQL page', () => {
   });
 
   it('renders response', async () => {
-    // jest.mock('../src/pages/GraphiqlIDE/index', () => {
-    //   const originalModule = jest.requireActual<
-    //     typeof import('../src/pages/GraphiqlIDE/index')
-    //   >('../src/pages/GraphiqlIDE/index');
-    //   return {
-    //     __esModule: true,
-    //     ...originalModule,
-    //     setValue: jest.fn(
-    //       () => `query GetCharacters($page: Int) {
-    //            characters(page: $page) {
-    //              results {
-    //                name
-    //              }
-    //            }
-    //        }`
-    //     ),
-    //     onChange: jest.fn(
-    //       () => `query GetCharacters($page: Int) {
-    //           characters(page: $page) {
-    //              results {
-    //                name
-    //              }
-    //            }
-    //        }`
-    //     ),
-    //     value: jest.fn(
-    //       () => `query GetCharacters($page: Int) {
-    //            characters(page: $page) {
-    //              results {
-    //                name
-    //              }
-    //            }
-    //        }`
-    //     ),
-    //   };
-    // });
-
     customRender();
 
     const inputElement = screen.getByRole('inputAPI') as HTMLInputElement;
@@ -160,10 +125,6 @@ describe('GraphQL page', () => {
     });
 
     fireEvent.click(connectBtn);
-
-    const queryEditor = screen.getByRole('queryEditor');
-    fireEvent.paste(queryEditor, 'Roman')
-    screen.debug(queryEditor);
 
     fireEvent.click(screen.getByText('Response'));
 
