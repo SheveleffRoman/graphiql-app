@@ -1,4 +1,4 @@
-import { formatGraphQLCode } from '../src/pages/GraphiqlIDE/codeFormatter';
+import { formatGraphQLCode } from '../pages/GraphiqlIDE/codeFormatter';
 
 describe('formatGraphQLCode', () => {
     it('should format GraphQL code with proper indentation for opening and closing curly braces', async () => {
