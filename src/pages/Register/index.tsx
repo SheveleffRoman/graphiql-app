@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { FC, useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -77,7 +78,7 @@ const Register: FC = () => {
       >
         <div className={styles['form-group']}>
           <label htmlFor="username">{texts.username}</label>
-          <input type="text" {...register('username')} />
+          <input id="username" type="text" {...register('username')} />
           {touchedFields.username && errors.username && (
             <p className={styles['error-message']}>{errors.username.message}</p>
           )}
@@ -85,7 +86,7 @@ const Register: FC = () => {
 
         <div className={styles['form-group']}>
           <label htmlFor="email">{texts.email}</label>
-          <input type="text" {...register('email')} />
+          <input id="email" type="text" {...register('email')} />
           {touchedFields.email && errors.email && (
             <p className={styles['error-message']}>{errors.email.message}</p>
           )}
@@ -93,7 +94,7 @@ const Register: FC = () => {
 
         <div className={styles['form-group']}>
           <label htmlFor="password">{texts.password}</label>
-          <input type="password" {...register('password')} />
+          <input id="password" type="password" {...register('password')} />
           {touchedFields.password && errors.password && (
             <p className={styles['error-message']}>{errors.password.message}</p>
           )}
@@ -101,7 +102,11 @@ const Register: FC = () => {
 
         <div className={styles['form-group']}>
           <label htmlFor="confirmPassword">{texts.confirmPassword}</label>
-          <input type="password" {...register('confirmPassword')} />
+          <input
+            id="confirmPassword"
+            type="password"
+            {...register('confirmPassword')}
+          />
           {touchedFields.confirmPassword && errors.confirmPassword && (
             <p className={styles['error-message']}>
               {errors.confirmPassword.message}
