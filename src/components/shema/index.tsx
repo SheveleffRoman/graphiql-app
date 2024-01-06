@@ -17,7 +17,7 @@ export type TDocProps = {
 };
 
 function GraphQLSchema(props: TDocProps) {
-  const { url } = props; // брать из стора
+  const { url } = props;
   const { texts } = useLocalization();
   const [schema, setSchema] = useState<TSchema | null>(null);
   const [queryShema, setQuerySchema] = useState<TType | null>(null);
@@ -26,7 +26,6 @@ function GraphQLSchema(props: TDocProps) {
   const [itemFileds, setItemFileds] = useState<IDocsItem | null>(null);
   const [isLoading, setisLoading] = useState(false);
   const [er, setEr] = useState<string | null>(null);
-  // const { endpoint } = useAppSelector((state) => state.editor);
 
   useEffect(() => {
     const fetchDocumentation = async () => {
@@ -48,9 +47,7 @@ function GraphQLSchema(props: TDocProps) {
       } catch (error) {
         setisLoading(true);
         const message =
-          error instanceof Error
-            ? error.message
-            : texts.errorShema;
+          error instanceof Error ? error.message : texts.errorShema;
         setEr(message);
       }
     };
@@ -67,13 +64,12 @@ function GraphQLSchema(props: TDocProps) {
         type.name.toUpperCase().includes('ROOT')
     );
 
-    if (!q) return; // не нашли query ввыводим одним листом
+    if (!q) return;
 
     setQuerySchema(q);
 
     if (!q.fields) return;
 
-    // составление словаря для  query
     function createGloss(fields: TField[]) {
       if (!schema) return null;
       const newGloss: TGloss = {};
@@ -91,8 +87,6 @@ function GraphQLSchema(props: TDocProps) {
     const newGloss = createGloss(q.fields);
     if (newGloss) setGloss(newGloss);
   }, [schema]);
-
-  // открыть подробности
 
   const clickFied = (field: TField) => {
     const prop: IDocsItem = { field };
@@ -134,7 +128,6 @@ function GraphQLSchema(props: TDocProps) {
     );
   }
 
-  // Display schema information as needed
   return (
     <div>
       <h2 className="querys-title">{queryShema.name}</h2>

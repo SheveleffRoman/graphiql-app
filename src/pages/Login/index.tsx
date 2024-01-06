@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import { FC, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -49,7 +51,6 @@ const Login: FC = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({ email: user.email, token: user.refreshToken, id: user.uid })
         );
@@ -69,13 +70,13 @@ const Login: FC = () => {
       >
         <div className={styles['form-group']}>
           <label htmlFor="email">{texts.email}</label>
-          <input type="email" {...register('email')} />
+          <input id="email" type="email" {...register('email')} />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
 
         <div className={styles['form-group']}>
           <label htmlFor="password">{texts.password}</label>
-          <input type="password" {...register('password')} />
+          <input id="password" type="password" {...register('password')} />
           {errors.password && <p>{errors.password.message}</p>}
         </div>
 

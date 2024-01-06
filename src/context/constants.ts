@@ -52,7 +52,7 @@ export const EN_TEXT = {
   login: 'Login',
   email: 'Email:',
   password: 'Password:',
-  newUser: 'Don&apos;t have an account? ',
+  newUser: "Don't have an account? ",
   newUserLink: 'Register here',
   logOut: 'Log out',
   registration: 'Registration',

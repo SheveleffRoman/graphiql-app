@@ -3,7 +3,7 @@ import Footer from '../../components/footer/Footer';
 import CodeMirror from '@uiw/react-codemirror';
 import styles from './index.module.scss';
 import InputAPI from '../../components/inputAPI/InputAPI';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { fetchAllData } from '../../services/fetchService';
 import { useAppSelector } from '../../hooks/redux-hooks';
@@ -12,6 +12,8 @@ import { useLocalization } from '../../context/local';
 import { BASE_SETUP } from './codeMirrorSetup';
 import { clsx } from 'clsx';
 import { formatGraphQLCode } from './codeFormatter';
+import useAuth from '../../hooks/useAuth';
+import { useNavigate } from 'react-router';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -21,7 +23,8 @@ export default function GraphiqlIDE() {
       }
     }
 }`;
-
+  const { isAuth } = useAuth();
+  const navigate = useNavigate();
   const [dataAxios, setDataAxios] = useState(null);
   const [value, setValue] = useState(startQuery);
   const [error, setError] = useState<AxiosError | SyntaxError | null>(null);
@@ -32,6 +35,10 @@ export default function GraphiqlIDE() {
   const { endpoint } = useAppSelector((state) => state.editor);
   const { texts } = useLocalization();
 
+  useEffect(() => {
+    !isAuth && navigate('/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth]);
   const fetchData = async () => {
     try {
       const parsedVariables = JSON.parse(variables || '{}');
