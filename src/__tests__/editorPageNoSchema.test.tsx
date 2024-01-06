@@ -5,9 +5,9 @@ import {
   screen,
   waitFor,
 } from '@testing-library/react';
-import { LocalizationProvider } from '../src/context/local';
-import GraphiqlIDE from '../src/pages/GraphiqlIDE/index';
-import { setupStore } from '../src/store';
+import { LocalizationProvider } from '../context/local';
+import GraphiqlIDE from '../pages/GraphiqlIDE/index';
+import { setupStore } from '../store';
 import { Provider } from 'react-redux';
 import React from 'react';
 import '@testing-library/jest-dom';

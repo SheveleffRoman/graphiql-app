@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render } from '@testing-library/react';
-import { LocalizationProvider } from '../src/context/local';
-import InputAPI from '../src/components/inputAPI/InputAPI';
-import { setupStore } from '../src/store';
+import { LocalizationProvider } from '../context/local';
+import InputAPI from '../components/inputAPI/InputAPI';
+import { setupStore } from '../store';
 import { Provider } from 'react-redux';
 import React from 'react';
 import '@testing-library/jest-dom';
