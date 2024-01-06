@@ -113,7 +113,7 @@ export default function GraphiqlIDE() {
                   value={value}
                   theme={'dark'}
                   basicSetup={BASE_SETUP}
-                  role="queryEditorr"
+                  role="queryEditor"
                 />
               </div>
               <div className={styles.editorToolButtons}>
