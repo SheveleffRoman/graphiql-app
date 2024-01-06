@@ -145,7 +145,5 @@ describe('GraphQL page with error response', () => {
     await waitFor(() => {
       expect(screen.getByText('Failed to fetch')).toBeInTheDocument();
     });
-
-    screen.debug()
   });
 });
