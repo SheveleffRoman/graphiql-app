@@ -16,7 +16,6 @@ import { setupStore } from '../store';
 import { LocalizationProvider } from '../context/local';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-
 const store = setupStore();
 
 afterEach(cleanup);
@@ -80,8 +79,12 @@ describe('Login Form', () => {
     });
 
     await waitFor(() => {
-      expect(signInWithEmailAndPassword).toHaveBeenCalledWith(undefined, inputEmail.value, inputPassword.value)
-    })
+      expect(signInWithEmailAndPassword).toHaveBeenCalledWith(
+        undefined,
+        inputEmail.value,
+        inputPassword.value
+      );
+    });
   });
 
   it('displays error message for invalid login', async () => {

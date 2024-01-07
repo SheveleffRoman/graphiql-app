@@ -22,9 +22,8 @@ describe('ShemaItems Component', () => {
   };
 
   test('renders field description when data is not available', () => {
-    render(<ShemaItems field={mockField} />);    
+    render(<ShemaItems field={mockField} />);
     expect(screen.getByText('Description')).toBeInTheDocument();
-
   });
 
   test('renders data description when available', () => {

@@ -39,17 +39,20 @@ function Header() {
         }`}
       >
         <Link to={'/'}>
-          <img className={styles.logo} src="../src/assets/logo.png" data-testid='logo' />
+          <img
+            className={styles.logo}
+            src="../src/assets/logo.png"
+            data-testid="logo"
+          />
         </Link>
         <div className={styles.actionBlock}>
           <LangSwitch />
-         
         </div>
         {isAuth && (
-            <button className={styles.signout} onClick={handleClick}>
-              {texts.logOut}
-            </button>
-          )}
+          <button className={styles.signout} onClick={handleClick}>
+            {texts.logOut}
+          </button>
+        )}
         {!isAuth && (
           <p className={styles.textBlock}>
             <Link to="/login" className="link">
