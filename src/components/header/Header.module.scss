@@ -34,6 +34,7 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  width: 110px;
 }
 
 .signout {
@@ -65,4 +66,9 @@
     &:hover{
         transform: scale(1.1);
     }
+}
+
+.textBlock{
+  width: 250px;
+  text-align: right;
 }

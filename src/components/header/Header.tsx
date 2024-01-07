@@ -43,14 +43,15 @@ function Header() {
         </Link>
         <div className={styles.actionBlock}>
           <LangSwitch />
-          {isAuth && (
+         
+        </div>
+        {isAuth && (
             <button className={styles.signout} onClick={handleClick}>
               {texts.logOut}
             </button>
           )}
-        </div>
         {!isAuth && (
-          <p className="text-block">
+          <p className={styles.textBlock}>
             <Link to="/login" className="link">
               {texts.login}
             </Link>
