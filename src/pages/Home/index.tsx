@@ -16,6 +16,8 @@ export default function Home() {
       <section className="wrapper">
         <h3 className="title">{texts.welcomeTitle}</h3>
         <p className="text-block">{texts.welcomeText}</p>
+        <p className="text-block">{texts.welcomeText4}</p>
+        <p className="text-block">{texts.welcomeText5}</p>
         {!isAuth && (
           <p className="text-block">
             {' '}
