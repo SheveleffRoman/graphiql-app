@@ -61,7 +61,6 @@ export default function GraphiqlIDE() {
         console.error('Error fetching data:', error.message);
         setError(error);
       } else if (error instanceof SyntaxError) {
-        console.log(error);
         console.error('Error json formatting:', error.message);
         setError(error);
       }

@@ -15,7 +15,6 @@ function InputAPI() {
 
   const connectApi = () => {
     dispatch(setAPI({ endpoint: value }));
-    console.log('Connecting to API with endpoint:', value);
   };
 
   return (

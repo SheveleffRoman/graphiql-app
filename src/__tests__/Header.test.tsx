@@ -6,8 +6,6 @@ import useAuth from '../hooks/useAuth';
 import Header from '../components/header/Header';
 import { BrowserRouter } from 'react-router-dom';
 
-
-// Mocking 
 jest.mock('../context/local');
 jest.mock('../hooks/useAuth');
 jest.mock('../hooks/redux-hooks');
@@ -18,10 +16,13 @@ describe('Header component', () => {
       lang: 'en',
       setLang: jest.fn(),
       setTexts: jest.fn(),
-      texts: { logOut: 'Log Out', login: 'Login', registration: 'Registration' },
+      texts: {
+        logOut: 'Log Out',
+        login: 'Login',
+        registration: 'Registration',
+      },
     });
-    (useAuth as jest.Mock).mockReturnValue({ isAuth: true });   
-    
+    (useAuth as jest.Mock).mockReturnValue({ isAuth: true });
   });
   test('renders Header component', () => {
     render(
@@ -63,6 +64,4 @@ describe('Header component', () => {
     expect(screen.getByText(/Login/i)).toBeInTheDocument();
     expect(screen.getByText(/Registration/i)).toBeInTheDocument();
   });
-
-  
 });
