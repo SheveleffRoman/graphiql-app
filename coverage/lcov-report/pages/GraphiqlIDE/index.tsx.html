@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/50</span>
+                <span class='fraction'>42/50</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.53% </span>
+                <span class="strong">64.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/13</span>
+                <span class='fraction'>9/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.43% </span>
+                <span class="strong">84.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/46</span>
+                <span class='fraction'>38/45</span>
             </div>
         
             
@@ -275,7 +275,14 @@
 <a name='L210'></a><a href='#L210'>210</a>
 <a name='L211'></a><a href='#L211'>211</a>
 <a name='L212'></a><a href='#L212'>212</a>
-<a name='L213'></a><a href='#L213'>213</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -294,6 +301,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,6 +324,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -339,9 +348,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -373,6 +381,8 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -503,6 +513,8 @@ import { clsx } from 'clsx';
 import { formatGraphQLCode } from './codeFormatter';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 &nbsp;
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -512,6 +524,7 @@ export default function GraphiqlIDE() {
         }
       }
   }`;
+&nbsp;
   const { isAuth } = useAuth();
   const navigate = useNavigate();
   const [dataAxios, setDataAxios] = useState(null);
@@ -528,6 +541,7 @@ export default function GraphiqlIDE() {
     !isAuth &amp;&amp; navigate('/');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth]);
+&nbsp;
   const fetchData = async () =&gt; {
     try {
       const parsedVariables = JSON.parse(variables || <span class="branch-1 cbranch-no" title="branch not covered" >'{}')</span>;
@@ -546,14 +560,13 @@ export default function GraphiqlIDE() {
       setDataAxios(response.data);
       setError(null);
     } catch (error) {
+      const notify = () =&gt; toast.error(error?.message);
       if (axios.isAxiosError(error)) {
-        console.error('Error fetching data:', error.message);
         setError(error);
       } else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="else path not taken" >E</span>if (error instanceof SyntaxError) {</span>
-<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
-<span class="cstat-no" title="statement not covered" >        console.error('Error json formatting:', error.message);</span>
 <span class="cstat-no" title="statement not covered" >        setError(error);</span>
       }
+      notify();
     }
   };
 &nbsp;
@@ -586,7 +599,9 @@ export default function GraphiqlIDE() {
   const onHeadersView = () =&gt; SetEditor(false);
   return (
     &lt;&gt;
+      &lt;ToastContainer /&gt;
       &lt;Header /&gt;
+&nbsp;
       &lt;div className={styles.wrapper}&gt;
         &lt;div className={styles.codeWrapper}&gt;
           &lt;InputAPI /&gt;
@@ -595,9 +610,9 @@ export default function GraphiqlIDE() {
               &lt;div className={styles.queryEditor}&gt;
                 &lt;CodeMirror
                   height="45vh"
-                  minWidth="320px"
-                  width="700px"
-                  maxWidth="700px"
+                  minWidth="200px"
+                  width="100%"
+                  maxWidth="900px"
                   onChange={onChange}
                   value={value}
                   theme={'dark'}
@@ -627,9 +642,9 @@ export default function GraphiqlIDE() {
               &lt;div className={styles.editorTool}&gt;
                 &lt;CodeMirror
                   height="150px"
-                  minWidth="320px"
-                  width="700px"
-                  maxWidth="700px"
+                  minWidth="200px"
+                  width="100%"
+                  maxWidth="900px"
                   onChange={onChangeVariables}
                   style={{ display: editor ? 'block' : 'none' }}
                   placeholder={'{"page": 5}'}
@@ -639,9 +654,9 @@ export default function GraphiqlIDE() {
                 /&gt;
                 &lt;CodeMirror
                   height="150px"
-                  minWidth="320px"
-                  width="700px"
-                  maxWidth="700px"
+                  minWidth="200px"
+                  width="100%"
+                  maxWidth="900px"
                   onChange={onChangeHeaders}
                   style={{ display: !editor ? 'block' : 'none' }}
                   placeholder={'{"from": "example@example.com"}'}
@@ -706,7 +721,7 @@ export default function GraphiqlIDE() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-01-07T12:01:00.841Z
+                at 2024-01-07T16:10:50.342Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

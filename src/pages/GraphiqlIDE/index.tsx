@@ -14,6 +14,8 @@ import { clsx } from 'clsx';
 import { formatGraphQLCode } from './codeFormatter';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function GraphiqlIDE() {
   const startQuery = `query GetCharacters($page: Int) {
@@ -23,6 +25,7 @@ export default function GraphiqlIDE() {
         }
       }
   }`;
+
   const { isAuth } = useAuth();
   const navigate = useNavigate();
   const [dataAxios, setDataAxios] = useState(null);
@@ -39,6 +42,7 @@ export default function GraphiqlIDE() {
     !isAuth && navigate('/');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth]);
+
   const fetchData = async () => {
     try {
       const parsedVariables = JSON.parse(variables || '{}');
@@ -57,13 +61,13 @@ export default function GraphiqlIDE() {
       setDataAxios(response.data);
       setError(null);
     } catch (error) {
+      const notify = () => toast.error(error?.message);
       if (axios.isAxiosError(error)) {
-        console.error('Error fetching data:', error.message);
         setError(error);
       } else if (error instanceof SyntaxError) {
-        console.error('Error json formatting:', error.message);
         setError(error);
       }
+      notify();
     }
   };
 
@@ -96,7 +100,9 @@ export default function GraphiqlIDE() {
   const onHeadersView = () => SetEditor(false);
   return (
     <>
+      <ToastContainer />
       <Header />
+
       <div className={styles.wrapper}>
         <div className={styles.codeWrapper}>
           <InputAPI />
