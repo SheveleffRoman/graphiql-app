@@ -1,3 +1,4 @@
+import React from 'react';
 import { IDocsItem } from './types';
 
 function ShemaItems(props: IDocsItem) {
