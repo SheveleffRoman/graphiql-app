@@ -30,7 +30,7 @@
 
 .graphqlResponse {
   overflow: auto;
-  min-width: 300px;
+  min-width: 200px;
   width: 500px;
   color: #abb2bf;
   background-color: #282c34;
@@ -82,6 +82,7 @@
 
 .queryEditor {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .schemaWrapper {
@@ -136,4 +137,31 @@
   transform-origin: left bottom;
   margin-top: 65px;
   width: 75px;
+}
+
+.codeSection {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (max-width: 990px) {
+  .schemaOpen {
+    width: 300px;
+  }
+
+  .graphiqlWrapper {
+    flex-direction: column;
+  }
+
+  .graphqlResponse {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .schemaOpen {
+    width: 250px;
+  }
 }
