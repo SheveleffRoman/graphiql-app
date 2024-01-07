@@ -24,7 +24,7 @@ export default function GraphiqlIDE() {
           name
         }
       }
-  }`;
+}`;
 
   const { isAuth } = useAuth();
   const navigate = useNavigate();
@@ -61,13 +61,14 @@ export default function GraphiqlIDE() {
       setDataAxios(response.data);
       setError(null);
     } catch (error) {
-      const notify = () => toast.error(error?.message);
+      const notify = (error: string) => toast.error(error);
       if (axios.isAxiosError(error)) {
         setError(error);
+        notify(error.message);
       } else if (error instanceof SyntaxError) {
         setError(error);
+        notify(error.message);
       }
-      notify();
     }
   };
 

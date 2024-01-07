@@ -14,6 +14,11 @@ import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router';
 import { setupServer } from 'msw/node';
 import { HttpResponse, graphql } from 'msw';
+import 'react-toastify/dist/ReactToastify.css';
+
+jest.mock('react-toastify/dist/ReactToastify.css', () => {
+  return null;
+});
 
 const store = setupStore();
 

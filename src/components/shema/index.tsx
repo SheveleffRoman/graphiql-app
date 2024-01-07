@@ -130,7 +130,9 @@ function GraphQLSchema(props: TDocProps) {
 
   return (
     <div>
-      <h2 className="querys-title" data-testid='shema'>{queryShema.name}</h2>
+      <h2 className="querys-title" data-testid="shema">
+        {queryShema.name}
+      </h2>
       <div className="querys-wrapper">
         <ul className="docs-list">
           {queryShema.fields &&

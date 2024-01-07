@@ -15,10 +15,7 @@ function Footer() {
           <a href={LINK_DEV1} className={styles.footerLink}>
             {texts.developer1}
           </a>
-          <a
-            href={LINK_DEV2}
-            className={styles.footerLink}
-          >
+          <a href={LINK_DEV2} className={styles.footerLink}>
             {texts.developer2}
           </a>
           <a href={LINK_DEV3} className={styles.footerLink}>

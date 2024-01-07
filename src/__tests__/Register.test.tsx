@@ -6,7 +6,7 @@ import {
   fireEvent,
   cleanup,
   act,
-  waitFor
+  waitFor,
 } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Register from '../pages/Register/index';
@@ -93,7 +93,11 @@ describe('Register Form', () => {
     });
 
     await waitFor(() => {
-      expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(undefined, inputEmail.value, inputPassword.value)
-    })
+      expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(
+        undefined,
+        inputEmail.value,
+        inputPassword.value
+      );
+    });
   });
 });
