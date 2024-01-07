@@ -39,7 +39,7 @@ function Header() {
         }`}
       >
         <Link to={'/'}>
-          <img className={styles.logo} src="../src/assets/logo.png" />
+          <img className={styles.logo} src="../src/assets/logo.png" data-testid='logo' />
         </Link>
         <div className={styles.actionBlock}>
           <LangSwitch />
