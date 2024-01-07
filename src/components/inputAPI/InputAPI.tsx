@@ -25,6 +25,7 @@ function InputAPI() {
         type="text"
         onChange={handleChangeEndpoint}
         role="inputAPI"
+        placeholder='https://rickandmortyapi.com/graphql'
       />
       <button className={styles.apiBtn} onClick={connectApi} role="connectAPI">
         {texts.connectAPI}
