@@ -10,7 +10,7 @@
     "format:fix": "prettier . --write",
     "preview": "vite preview",
     "prepare": "husky install",
-    "test": "jest --coverage",
+    "test": "jest --coverage --silent",
     "coverage": "istanbul cover node_modules/jest/bin/jest.js --coverage && istanbul report --include coverage/*/src/**/*.js",
     "test:watch": "jest --watch"
   },
@@ -84,6 +84,8 @@
     "testEnvironmentOptions": {
       "customExportConditions": []
     },
-    "setupFiles": ["./jest.polyfills.js"]
+    "setupFiles": [
+      "./jest.polyfills.js"
+    ]
   }
 }
