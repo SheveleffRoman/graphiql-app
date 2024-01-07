@@ -1,11 +1,12 @@
 import { ChangeEvent, useState } from 'react';
 import styles from './InputAPI.module.scss';
-import { useAppDispatch } from '../../hooks/redux-hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 import { setAPI } from '../../store/slices/editorSlices';
 import { useLocalization } from '../../context/local';
 
 function InputAPI() {
-  const [value, setValue] = useState('');
+  const { endpoint } = useAppSelector((state) => state.editor);
+  const [value, setValue] = useState(endpoint);
   const dispatch = useAppDispatch();
   const { texts } = useLocalization();
 
