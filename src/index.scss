@@ -1,0 +1,32 @@
+$font-stack: Helvetica, sans-serif;
+$font-size: 14px;
+$primary-color: #4821a4;
+$link-color: #3498db;
+$link-color-hover: #00c1f7;
+$error-color: #ff0000;
+$desctop: 1280px;
+$table: 768px;
+$mobil: 320px;
+$headerV: 100px;
+$headerStyckV: 60px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: $font-size;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}

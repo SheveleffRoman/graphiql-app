@@ -1,0 +1,27 @@
+@import '../../index.scss';
+
+.wrapper {
+  margin-top: $headerV;
+  max-width: $desctop;
+  padding: 5px;
+  font-size: 20px;
+}
+.title {
+  padding: 10px 0;
+  text-align: center;
+}
+.text-block {
+  text-align: justify;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+
+.link {
+  color: $link-color;
+  text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    text-decoration: underline;
+    color: $link-color-hover;
+  }
+}
