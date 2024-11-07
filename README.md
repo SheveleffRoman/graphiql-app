@@ -7,6 +7,12 @@ This project is a collaborative learning assignment developed as part of the RS 
 - **Course**: RS School React
 - **Date Completed**: 2024-01-08 (Deadline: 2024-01-08)
 
+## Deployment
+- Live App: [Netlify Deployment](https://cosmic-liger-c9a4b2.netlify.app)
+
+## Video Demo
+- YouTube: [Project Walkthrough](https://www.youtube.com/watch?v=WmiLFhtbFHk)
+
 ## Project Features
 
 ### Welcome Page - Score: 50/50
@@ -42,12 +48,6 @@ This project is a collaborative learning assignment developed as part of the RS 
 ![cosmic-liger-c9a4b2 netlify app_graphiql](https://github.com/user-attachments/assets/49ab2ad3-de22-428c-853c-1c657f1498a5)
 
 <img width="712" alt="Editor Example" src="https://github.com/Mardon07/graphiql-app/assets/118383206/c69cee80-5ec3-4b4f-af92-4f6f60ee621c"/>
-
-## Deployment
-- Live App: [Netlify Deployment](https://cosmic-liger-c9a4b2.netlify.app)
-
-## Video Demo
-- YouTube: [Project Walkthrough](https://www.youtube.com/watch?v=WmiLFhtbFHk)
 
 ## Score
 **Total**: 340 / 350
